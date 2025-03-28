@@ -1,0 +1,813 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+%\input{rgb} 
+%----------Packages----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage[all]{xy}
+\usepackage[mathcal]{eucal}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage{fullpage}  %%smaller margins
+%----------Commands----------
+
+%%penalizes orphans
+\clubpenalty=9999
+\widowpenalty=9999
+
+
+
+
+
+%% bold math capitals
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+%% blackboard bold math capitals
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% script math capitals
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\emptyset}{\O}
+
+\providecommand{\abs}[1]{\lvert #1 \rvert}
+\providecommand{\bbNorm}[1]{\lVert #1 \rVert}
+
+
+\providecommand{\x}{\times}
+
+
+
+
+\providecommand{\ar}{\rightarrow}
+\providecommand{\arr}{\longrightarrow}
+
+
+
+
+\newcommand{\head}[1]{
+	\begin{center}
+		{\large #1}
+		\vspace{.2 in}
+	\end{center}
+	
+	\bigskip 
+}
+
+
+%----------Theorems----------
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{axiom}{Axiom}
+\newtheorem*{axioms}{Axioms}
+\newtheorem*{principle}{PMI} 
+\newtheorem*{remark}{Remark}
+
+\newtheorem*{definition}{Definition}
+
+
+
+
+%----------Title-------------
+
+\begin{document}
+
+\pagestyle{plain}
+
+
+%%---  sheet number for theorem counter
+
+\head{ MATH 161, Autumn 2024\\ SCRIPT 0: The Natural Numbers and Mathematical Induction} 
+
+
+We let ${\mathbb N} $ denote the {\em natural numbers}. So $${\mathbb N}=\{1,2,3,\cdots,n,\cdots\}.$$
+
+
+\begin{principle}[Principle of Mathematical Induction]  For each natural number $n$, let $P(n)$ be a proposition. 
+Suppose the following two results:
+\begin{center}
+\begin{tabular}{ll}
+(A) & $P(1)$ is true. \\
+(B) & For each natural number $k,$ if $P(k)$ is true, then $P(k+1)$ is also true. \\
+\end{tabular}
+\end{center}
+Then $P(n)$ is true for all natural numbers $n.$
+\end{principle}
+
+Statement (A) is called the base case and statement (B) is called the inductive step.  The assumption that $P(n)$ is true is called the inductive hypothesis.\medskip
+
+We assume that we have defined addition, multiplication and order on $\bbN$ so that all the usual properties hold (see Exercise 8 in the Additional Exercises section below).
+
+
+\begin{enumerate}
+
+
+
+\item Prove that for all natural numbers $n$,   
+\[
+6\left( 1^2 + 2^2 + 3^2 + \dotsm + n^2\right)  =n(2n + 1)(n + 1).
+\]
+
+\begin{proof}
+    Let $n = 1$. Then, LHS = $6 \times  (1^2) = 6$ and RHS = $1 \times 3 \times 2 = 6$. Thus, the base case is true.
+
+    Next, extend the proposition from $n$ to $n+1$. Then,
+    \[
+        6\left(1^2 + 2^2 + 3^2 + \dotsm + n^2 + (n+1)^2\right) = 6\left(1^2 + 2^2 + 3^2 + \dotsm + n^2\right) + 6\left(n+1\right)^2.
+    \]
+
+    Now, assume that the proposition is true for $n$ (inductive hypothesis). Then,
+    \[
+        6\left(1^2 + 2^2 + 3^2 + \dotsm + n^2 + (n+1)^2\right) = \left(n(2n + 1)(n + 1)\right) + 6\left(n+1\right)^2.
+    \]
+
+    When simplified, the RHS evaluates to
+    \[
+        (n+1)(n+2)(2n+3).
+    \]
+    This expression is of the same form as $n(n+1)(2n+1)$, with $n+1$ in place of $n$. 
+    
+    Thus, the base case is true for $n=1$, and truth of $P(n)$ implies truth of $P(n+1)$. This completes the proof. \renewcommand\qedsymbol{QED}
+    
+\end{proof}
+
+
+\item  Prove 
+\[
+\mbox{
+If $x>-1$, then $(1+x)^n\geq 1+nx$ for any natural number $n$.}
+\]
+(Note that although this script is focused on the natural numbers, your argument should hold for any real number $x>-1.$)
+
+\begin{proof}
+
+Let $n = 1$. Then, $(1+x)^1 \geq 1+x$. Thus, the base case is true. 
+
+Next, extend the proposition from $n$ to $n+1$. We would like to show that
+\[
+    (1+x)^ {n+1} \geq 1 + (n+1)x.
+\]
+
+Now, we note that
+\[
+    (1+x)^ {n+1} = \left((1+x)^n \times (1+x)\right).
+\]
+Hence, we need to show that
+\[
+    \left((1+x)^n \times (1+x)\right) \geq 1 + (n+1)x.
+\]
+
+Since $x> -1$, $1+x >0$, which means that we can multiply both sides of the inequality by $(1+x)$ without changing the sign of the inequality. Now, assuming that the proposition is true for $n$ (inductive hypothesis), it suffices to show that
+\[
+    (1 + nx) \times (1+x) \geq 1 + nx + n.
+\]
+
+Upon expanding and simplifying, this is equivalent to
+\[
+    1 + (n+1)x + nx^2 \geq 1 + (n+1)x.
+\]
+
+The above, when simplified, is equivalent to
+\[
+    nx^2 \geq 0.
+\]
+
+This is true, since $n > 0$ by the definition of natural numbers, and $x^2 \geq 0$ by the trivial inequality. Thus, the base case is true for $n=1$, and truth of $P(n)$ implies truth of $P(n+1)$. This completes the proof. \renewcommand\qedsymbol{QED}
+
+\end{proof}
+ 
+\item  Prove  that if $A$ is a non-empty subset of $\bbN,$ then 
+ $A$ has a least element, i.e. there is some $n_0\in A$ such that for all $n$ in $A$ we have $n_0\leq n.$
+ 
+ {\it Hint: Argue by contradiction. Let $P(n)$ be the proposition that $1,2,\cdots, n \not\in A$.}
+
+\begin{proof}
+
+We prove this by contradiction. Using contraposition, we want to show that if $A$ does not have a least element then $A$ is empty.
+
+Let $A \subset \bbN, A \neq \emptyset$. Let $P(n)$ be the proposition that $1,2,\cdots, n \notin A$.
+
+As a base case, $1$ is the least element in $\bbN$, hence $1 \notin A$. We now proceed with induction on $n$.
+
+Then, if $A$ is non-empty, there must exist some subset of $\bbN$, which we can label $\bbN_0$, such that $A \subset \bbN_0$, and $\bbN_0 = \{n+1, n+2, n+3,\cdots\}$. 
+
+Then, $n+1$ is the least element of $\bbN_0$. Hence, $n+1 \notin A$. Therefore, if $1,2,\cdots, n \notin A$, then $n+1 \notin A$. Together with the truth of base case $n=1$, this completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+
+The above is the proof we discussed in class. I have also, out of curiosity, made an attempt at a different method (which I am not entirely sure constitutes a valid proof, so I would really appreciate feedback).
+
+\begin{proof}
+
+Let $m$ denote the cardinality of the non-empty subset $A \subset \bbN$. Thus, $m \geq 1$.
+
+Let $P(m)$ be the proposition that the subset with cardinality $m$ has a least element. The base case is true for $m=1$, since if a set has only one element, that is the least element.
+
+We now proceed with induction on $m$. The inductive hypothesis is that the subset $A \subset \bbN$ with cardinality $m$ has a least element, $n_0\in A$. Next, consider a subset $B \subset \bbN$ with cardinality $m+1$. There must exist some element $i \in B, i \notin A$.
+
+We now compare this element $i$ with the least element of $A$, as per the following algorithm. If $i > n_0$, the least element remains unchanged. If $i < n_0$, i is the new least element. (Note that $i \neq n_0$ since $i \notin A$.)
+
+Thus, if a subset of $\bbN$ with cardinality $m$ has a least element, then so does a subset of $\bbN$ with cardinality $m+1$. We have also shown that the base case holds for $m=1$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+
+\item  Prove that if $n\geq 4$, then $n^2\leq 2^n$.
+
+\begin{proof}
+
+Let $n = 4$. Then, $4^2 = 16 \leq 2^4 = 16$. Thus, the base case is true.
+
+Next, extend the proposition from $n$ to $n+1$. We would like to show that
+\[
+    (n+1)^2 \leq 2^{n+1}.
+\]
+
+The above is equivalent to 
+\[
+    n^2 + 2n + 1 \leq 2^n \times 2.
+\]
+
+Assuming that the proposition is true for $n$ (inductive hypothesis), $n^2 \leq 2^n$, which is equivalent to $\frac{n^2}{2^n} \leq 1$.
+
+Dividing both sides of the inequality by $2^n$, we would like to show that
+\[
+    \frac{n^2}{2^n} + \frac{2n+1}{2^n} \leq 2.
+\]
+
+By the inductive hypothesis, we assume that $\frac{n^2}{2^n} \leq 1$. Hence, it suffices to show that
+\[
+    \frac{2n+1}{2^n} \leq 1.
+\]
+
+This is equivalent to 
+\[
+    2n + 1 \leq 2^n.
+\]
+
+If $2n+1 \leq n^2$, then since $n^2 \leq 2^n$, it follows that $2n+1 \leq 2^n$. Hence, it suffices to show that $2n+1 \leq n^2$.
+
+To do this, we rewrite $2n+1 \leq n^2$ as
+\[
+    n \times (2 + \frac{1}{n}) \leq n \times n.
+\]
+
+The above is equivalent to $2 + \frac{1}{n} \leq n$. Since $n \geq 4$, this is trivially true. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{enumerate}
+
+
+\begin{remark}
+From now on we assume that all the usual properties of $\bbN$ and $\bbZ$ hold. These are stated below. 
+\end{remark}
+
+
+
+Using $\bbN$ we can construct 
+$$\bbZ=\{\cdots,-3,-2,-1,0,1,2,3,\cdots\}= (-\bbN)\cup\{0\}\cup(\bbN),$$
+ where $-\bbN=\{-1,-2,-3,\cdots\}.$   We extend the definitions of addition and multiplication from $\bbN$ to $\bbZ$ in the usual way. 
+ (We omit the details. The method needed is similar to one we will
+ see when we construct $\bbQ$ from $\bbZ$ in a
+ rigorous manner.)
+ We define an ordering on $\bbZ$ as follows:  if  $a,b\in\bbZ$ then we define $a<b$ if $b=a+c,$ for some $x\in\bbN.$ 
+ We will also adopt the usual notation that $a<b$ is equivalent to $b>a.$ \newpage
+
+
+ {\bf Defining Properties of $\bbZ$.}
+
+  
+  \begin{enumerate}
+  \item If $n,m\in\bbZ$ then $n+m\in\bbZ$ and $n\cdot m\in\bbZ.$ \qquad {\bf Closure of addition and multiplication} \qquad
+  \item $n+m=m+n,$ for all $n,m\in \bbZ$\qquad{\bf Commutativity of addition}
+  \item $(n+m)+l=n+(m+l),$ for all $n,m,l\in\bbZ$ \qquad {\bf Associativity of addditon}
+  \item$m+0=m,$ for all $m\in\bbZ$\qquad  {\bf Existence of an additive identity}
+  \item $m+(-m)=0,$ for all $m\in \bbZ$\qquad {\bf Existence of additive inverses}
+  \item $m\cdot n=n\cdot m,$ for all $m,n\in\bbZ$\qquad {\bf Commutativity of multiplication}
+  \item $m\cdot(n\cdot l)=(m\cdot n)\cdot l,$ for all $m,n,l\in\bbZ$ \qquad {\bf Associativity of multiplication}
+  \item$m\cdot 1=m,$ for all $m\in\bbZ$\qquad {\bf Existence of a multiplicative identity}
+  \item$m\cdot (n+l)=m\cdot n+m\cdot l,$ for all $m,n,l\in\bbZ$ \qquad {\bf Distributivity} 
+  \item If $a>b$ and $c\in\bbZ$ then $a+c>b+c$. Moreover, if $a>0$ and $b>0,$ then $a+b>0.$
+  \item If $a>b$ and $c>0$ then $ac>bc$.
+  \item For any two integers $a,b\in\bbZ,$ exactly one of $a<b,a=b,$ or $a>b$ is true. \qquad{\bf Trichotomy}
+  \item The set $\bbN\subset\bbZ$ (which consists exactly of those integers greater than $0$)
+ satisfies the {\bf Principle of Mathematical Induction}.
+ \end{enumerate}   
+
+
+\begin{remark} These are ``defining properties'' in the  sense that
+any structure satisfying these properties must have a one-to-one correspondence with $\bbZ$ that respects $+$, $\cdot$ and $<$. (The definition of 
+a one-to-one correspondence will be formalized 
+in Script 1.)
+Some consequences of the defining properties are given in the additional exercises below. In particular Additional Exercise 2 includes the cancellation properties for the integers.
+\end{remark}
+  \newpage
+ 
+
+
+\begin{center}
+ {\em Additional Exercises}
+ 
+ {\em In all exercises you are expected to prove your answer, unless explicitly stated otherwise.}
+ 
+ \end{center}
+ \begin{enumerate}
+ 
+
+\item Prove the following variants of the Principle of Mathematical Induction:
+\begin{enumerate}
+\item For each $n\in {\mathbb N}$, let $P(n)$ be a proposition and let $n_0$ be some natural number. 
+Suppose the following two results:
+\begin{center}
+\begin{tabular}{ll}
+(A) & $P(n_0)$ is true. \\
+(B) & For each natural number $k\geq n_0,$ if $P(k)$ is true, then $P(k+1)$ is also true. \\
+\end{tabular}
+\end{center}
+Then $P(n)$ is true for all natural numbers $n$ such that $n\geq n_0.$
+
+\begin{proof}
+Let the set $\bbN_0 = \{x \in \bbN \mid x \geq n_0\}$.
+
+Define a set $S \subset \bbN_0$ such that $n_0 \in S$ and $\forall x \in S: x+1 \in S$. In other words, $x \in S$ implies $x+1 \in S$. 
+
+If the Principle of Mathematical Induction (PMI) is true, then $S = \bbN_0$. In other words, if PMI is true then $S \setminus \bbN_0 = \emptyset$. We prove PMI by contradiction.
+
+Assume that $S \setminus \bbN_0 \not= \emptyset$, and call this non-empty set $M$. Then, let the least element of $M$ be $m$. By property (A), $n_0 \in S$, therefore $n_0 \notin M$, hence $m \not = n_0$.
+
+Since $m$ is the least element of $M$, and by definition $S \cup M = \bbN_0$, we know that $m-1 \in S$. Then, by the definition of set $S$, $m-1+1 = m$ must be in $S$.
+
+We have reached a contradiction, and this completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+\item 
+For each $n\in {\mathbb N}$, let $P(n)$ be a proposition. 
+Suppose the following two results:
+\begin{center}
+\begin{tabular}{ll}
+(A) & $P(1)$ is true. \\
+(B) & For each natural number $k,$ if $P(r)$ is true for all $r$ such that $1\leq r\leq k$, \\  & then $P(k+1)$ is true.
+\end{tabular}
+\end{center}
+Then $P(n)$ is true for all natural numbers $n.$
+
+\begin{proof}
+
+Define a set $S \subset \bbN$ such that $1 \in S$ and if all $ 1 \leq r \leq x \in S$ then $x+1 \in S$. 
+
+If the Principle of Mathematical Induction (PMI) is true, then $S = \bbN$. In other words, if PMI is true then $S \setminus \bbN = \emptyset$. We prove PMI by contradiction.
+
+Assume that $S \setminus \bbN \not= \emptyset$, and call this non-empty set $M$. Then, let the least element of $M$ be $m$. By definition, $1 \in S$, therefore $1 \notin M$, hence $m \not = 1$.
+
+Since $m$ is the least element of $M$, and by definition $S \cup M = \bbN$, we know that all $1 \leq r \leq m-1 \in S$. Then, by the definition of set $S$, $m-1+1 = m$ must be in $S$.
+
+We have reached a contradiction, and this completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+\end{enumerate} 
+ 
+ 
+ \item Using the Defining Properties of ${\mathbb Z},$ prove each of the following:
+  \begin{enumerate}
+  \item[a)] Given $m,n,l\in\bbZ$, if $m+n=l+n$ then $m=l$ \qquad {\bf Cancellation law for addition}
+  \item[b)] Given $m,n,l\in\bbZ, n\neq 0,$ if $m\cdot n=l\cdot n$ then $ m=l$\qquad {\bf Cancellation law for multiplication}
+   \item[c)] $m\cdot 0=0,$ for all $m\in\bbZ$ 
+  \item[d)] $m\cdot (-1)=-m,$ for all $m\in \bbZ$
+  \item[e)] If $ab=0$ then  $a=0 $ or $b=0.$ 
+\item[f)] The additive and multiplicative identities are unique, as are additive inverses. 
+ \end{enumerate} 
+
+
+ 
+ \item Show that, for every natural number $n,$
+ \begin{enumerate}
+ \item[i)] $$\sum_{i=1}^n i =\frac{n(n+1)}{2}$$
+ \item[ii)] $$\sum_{i=1}^n i^3 = \frac{n^2 (n+1)^2}{4}.$$
+ \end{enumerate}
+ 
+ \item Show that
+\[1+3+3^2+\ldots +3^{n-1}=\frac{3^n-1}{2}\]
+for every natural number $n.$
+Give two proofs of this:
+one by induction and one not.
+
+\begin{proof}[Proof by Induction]
+First, consider the base case where $n=1$. Then, the LHS = 1 and the RHS = $\frac{3^1 - 1}{2} = 1$. 
+
+Then, we want to show that
+\[
+    1 + 3 + 3^2 + \dots + 3^{n-1} + 3^n = \frac{3^{n+1} - 1}{2}.
+\]
+
+By the inductive hypothesis, the above is equivalent to
+\[
+    \frac{3^n-1}{2} + 3^n = \frac{3^{n+1} - 1}{2}.
+\]
+
+Simplifying the fractional expressions, the above is equivalent to
+\[
+    3^n - 1 + (2 \times 3^n) = 3^{n+1} - 1.
+\]
+
+The LHS further simplifies to
+\[
+    (3 \times 3^n) - 1 = 3^{n+1} - 1.
+\]
+
+This is equivalent to the expression for the RHS. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+\begin{proof}[Direct Proof (Algebraic)]
+
+We want to show that 
+\[
+    3^0 + 3^1 + 3^2 + \dots + 3^{n-1} = \frac{3^n - 1}{2}.
+\]
+
+Rewriting the RHS as $\frac{3^n}{2} - \frac{1}{2}$, rearranging, and dividing both sides by $3^n$, the above is equivalent to
+\[
+    \frac{1}{2 \times 3^n} + \frac{1}{3^n} + \frac{1}{3^{n-1}} + \frac{1}{3^{n-2}} + \dots + \frac{1}{3} = \frac{1}{2}.
+\]
+
+The above is equivalent to 
+\[
+    \frac{1}{2 \times 3^n} + \sum_{i=1}^{n} \frac{1}{3^i} = \frac{1}{2}.
+\]
+
+Hence, it suffices to show that
+\[
+    \sum_{i=1}^{n} \frac{1}{3^i} = \frac{1}{2} - \frac{1}{2 \times 3^n}.
+\]
+
+We know that
+\[
+    \sum_{i=1}^{n} \frac{1}{3^i} = \frac{1}{3^1} + \frac{1}{3^2} + \frac{1}{3^3} + \dots + \frac{1}{3^n}.
+\]
+Multiplying both sides by 3, we get that
+\[
+    3 \times \sum_{i=1}^{n} \frac{1}{3^i} = 1 + \frac{1}{3^1} + \frac{1}{3^2} + \frac{1}{3^3} + \dots + \frac{1}{3^{n-1}}.
+\]
+
+Therefore,
+\[
+    2 \times \sum_{i=1}^{n} \frac{1}{3^i} = 1 - \frac{1}{3^n}.
+\]
+
+Hence, 
+\[
+    \sum_{i=1}^{n} \frac{1}{3^i} = \frac{1}{2} - \frac{1}{2 \times 3^n}.
+\]
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+More generally, show that if $x\neq 1$ is a real number and $n$ is a natural number, then
+\begin{align*}
+  1 + x + x^2 + \cdots + x^{n-1} = \frac{x^n - 1}{x - 1}.
+\end{align*}
+
+\begin{proof}
+
+We prove this by induction. First consider the base case for $n = 1$. Then, the LHS = 1 and the RHS = $\frac{x-1}{x-1} = 1$. 
+
+Next, we want to show that
+\[
+    x^0 + x^1 + x^2 + \dots + x^{n-1} + x^n
+= \frac{x^{n+1} - 1}{x-1}.
+\]
+
+By the inductive hypothesis, the above is equivalent to
+\[
+    \frac{x^n - 1}{x - 1} + x^n = \frac{x^{n+1} - 1}{x-1}.
+\]
+
+Hence, we want to show that
+\[
+    x^n = \frac{(x^{n+1} - 1) - (x^{n} - 1)}{x-1}.
+\]
+
+The RHS simplifies to
+\[
+    \frac{x^{n+1} - x^n}{x-1} = \frac{x^n(x-1)}{x-1} = x^n.
+\]
+
+Hence, expression for LHS is equivalent to the expression for RHS. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+
+\end{proof}
+
+\item Show that any natural number $n\geq 22$
+can
+be written
+as $3a+11b$
+where $a$ and $b$ are both integers.
+
+\item Let $n$ be a natural number and let $k$ be either $0$ or a natural number with $k\leq n.$ Define
+$$ \left(\begin{array}{c} n\\ k\end{array}\right)=\frac{n!}{k!(n-k)!},$$
+where $k!=1\times 2\times\times\cdots \times k,$ for $k\geq 1,$ and $0!=1.$ 
+Show that 
+
+$$
+(x+y)^n  = \sum_{k=0}^n  \left(\begin{array}{c} n\\ k\end{array}\right) x^{n-k}y^k,$$
+for all $n\in\bbN.$
+
+\begin{proof}
+We prove this by induction. First, consider the base case where $n=1$. Then $\left(\begin{array}{c} n\\ k\end{array}\right) = 1$, so the LHS is $x+y$ and the RHS is $x^{1}y^{0} + x^{0}y^{1} = x + y$.
+
+Next, we want to show that 
+\[
+(x+y)^{n+1} = \sum_{k=0}^{n+1}  \left(\begin{array}{c} n+1\\ k\end{array}\right) x^{n+1-k}y^k.
+\]
+
+The LHS can be rewritten as
+\[
+(x+y) \times (x+y)^n.
+\]
+
+Then, using the inductive hypothesis for $(x+y)^n$, the above is equivalent to
+\[
+(x+y) \times \sum_{k=0}^{n}  \left(\begin{array}{c} n\\ k\end{array}\right) x^{n-k}y^k = \sum_{k=0}^{n}  \left(\begin{array}{c} n\\ k\end{array}\right) \left(x^{n+1-k}y^k + x^{n-k}y^{k+1}\right).
+\] 
+
+The above is equivalent to
+\[
+\sum_{k=0}^{n}  \left(\begin{array}{c} n\\ k\end{array}\right) x^{n+1-k}y^k + \sum_{k=0}^{n}  \left(\begin{array}{c} n\\ k\end{array}\right) x^{n-k}y^{k+1}.
+\]
+
+When we expand the summations, we find that the above is equivalent to
+\[
+\left(\begin{array}{c} n\\ 0\end{array}\right)x^{n+1} y^0 + \left(\begin{array}{c} n\\ 1\end{array}\right)x^n y^1 + \dots + \left(\begin{array}{c} n\\ n\end{array}\right)x^1y^n\ + \left(\begin{array}{c} n\\ 0\end{array}\right)x^{n} y^1 + \left(\begin{array}{c} n\\ 1\end{array}\right)x^{n-1} y^2 + \dots + \left(\begin{array}{c} n\\ n\end{array}\right)x^0y^{n+1}.
+\]
+
+Finding a similar term $x^ny^1$, we rewrite this sum as
+\[
+\left(\begin{array}{c} n\\ 0\end{array}\right)x^{n+1} y^0 + \sum_{k=1}^{n+1}  \left[\left(\begin{array}{c} n\\ k\end{array}\right) + \left(\begin{array}{c} n\\ k-1\end{array}\right)\right] x^{n+1-k}y^k + \left(\begin{array}{c} n\\ n\end{array}\right)x^0y^{n+1}.
+\]
+
+
+For future reference, let the above be M. Using the definition of $\left(\begin{array}{c} n\\ k\end{array}\right)$,
+\[
+\left(\begin{array}{c} n+1\\ k\end{array}\right) = \frac{(n+1)!}{k! (n+1-k)!}.
+\]
+
+We also have that
+\[
+\left(\begin{array}{c} n\\ k\end{array}\right) + \left(\begin{array}{c} n\\ k-1\end{array}\right) = \frac{n!}{k! (n-k)!} + \frac{n!}{(k-1)! (n+1-k)!} = \frac{(n+1)n!}{k!(n+1-k)!} = \frac{(n+1)!}{k!(n+1-k)!}.
+\]
+
+Hence, 
+\[
+\left(\begin{array}{c} n+1\\ k\end{array}\right) = \left(\begin{array}{c} n\\ k\end{array}\right) + \left(\begin{array}{c} n\\ k-1\end{array}\right).
+\]
+
+Substituting this expression into M, we get 
+\[
+\left(\begin{array}{c} n\\ 0\end{array}\right)x^{n+1} y^0 + \left[\sum_{k=1}^{n+1}  \left(\begin{array}{c} n+1\\ k\end{array}\right) x^{n+1-k}y^k\right] + \left(\begin{array}{c} n\\ n\end{array}\right)x^0y^{n+1}.
+\]
+
+The above is equivalent to 
+\[
+\sum_{k=0}^{n+1}  \left(\begin{array}{c} n+1\\ k\end{array}\right) x^{n+1-k}y^k.
+\]
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+\item Let $a,b\in\bbZ.$ We say that $b$ is {\em divisible} by $a$ if there is an integer $m$ such that $b=ma.$ It is easily shown that
+\begin{enumerate}
+\item[i)] if both $b_1$ and $b_2$ are divisible by $a,$ then so is their sum;
+\item[ii)] if $b$ is divisible by $a,$ then so is $kb,$ for any integer $k.$
+\end{enumerate}
+Assuming these two results, prove that $2^{n+2}+3^{2n+1}$ is divisible by 7 for all natural numbers $n.$
+
+
+
+
+\item {\em The point of this problem is to introduce the axiomatic definition of the natural numbers and the formal definitions of addition, multiplication and order for the natural numbers and prove some of their basic properties. Consequently you should only work with the definition of $\bbN$ and the definitions/information given in the question and should NOT be appealing to the defining 
+properties of the integers given above in the script.}
+
+
+
+
+\begin{axioms}[Peano's Postulates]
+The natural numbers are defined as a set ${\mathbb N}$ together with a unary 
+``successor" function $S:{\mathbb N}\rightarrow {\mathbb N}$
+and a special element $1\in {\mathbb N}$ satisfying the following postulates:
+
+\begin{tabular}{ll}
+I.  & $1\in {\mathbb N}$.  \\
+
+II. &  If $n\in {\mathbb N}$, then $S(n)\in {\mathbb N}$.  \\
+
+III.  &  There is no $n\in {\mathbb N}$ such that $S(n)=1$.  \\
+
+IV.  &  If $n, m\in {\mathbb N}$ and $S(n)=S(m)$, then $n=m$.  \\
+
+V. &  If $A\subset {\mathbb N}$ is a subset satisfying the two properties: \\
+& \phantom{MMM}  $\bullet$ $1\in A$ \\
+
+& \phantom{MMM} $\bullet$ if $n\in A$, then $S(n)\in A$, \\
+
+& then $A={\mathbb N}$. \\
+\end{tabular}
+\end{axioms}
+
+\begin{enumerate}
+
+
+
+
+
+\item  
+
+Define a special element $0\not\in\bbN$ and define $\bbN_0=\bbN\cup\{0\}.$  Let $s:\bbN_0 \longrightarrow \bbN$ be defined by 
+\begin{eqnarray*}
+s(0) & = & 1\\
+s(n) & = & S(n),\ \text{for}\ n\in\bbN,
+\end{eqnarray*}
+where $S$ is the successor function defined in Peano's Postulates.
+
+\begin{definition}
+We define addition $x+y,$ for $x,y\in \bbN_0,$ inductively on $y$ by 
+\begin{eqnarray*}
+x+0 & = & x\\
+x+s(y) & = & s(x+y).
+\end{eqnarray*}
+\end{definition}
+
+Prove that $x+1=s(x),$ for all $x\in \bbN_0.$
+
+\item Prove that the Principle of Mathematical Induction follows from Peano's Postulates.
+
+
+\begin{theorem} The following facts all hold.  
+ \begin{enumerate}
+ \item If $x,y\in \bbN_0$ then  $x+y\in  \bbN_0.$
+ \item $0+x=x,$ for all $x\in \bbN_0.$
+ \item (Commutative Law) $x+y=y+x,$ for all $x,y\in  \bbN_0.$
+ \item (Associative Law) $x+(y+z)=(x+y)+z,$ for all $x,y,z\in  \bbN_0.$
+ \item Given $x,y,z\in\bbN_0,$ if  $x+y=x+z$ then $y=z.$
+ \end{enumerate} 
+ \end{theorem}
+ 
+ \begin{proof}  The proof of each part involves induction. Try it! 
+ \end{proof}
+ 
+ \item 
+ \begin{definition}
+ We define multiplication $x\cdot y,$ for $x,y\in \bbN_0,$ inductively on $\bbN_0$ by
+ \begin{eqnarray*}
+ x\cdot 0 & = & 0\\
+ x\cdot s(y) & = & x\cdot y + x.
+ \end{eqnarray*}
+ \end{definition}
+ 
+
+ 
+ Prove that $x\cdot 1=x,$ for all $x\in \bbN_0.$
+ 
+( Note: you may use any results that you like from the theorem in part a) above.  Induction isn't necessary.)
+
+ 
+\item
+ 
+ \begin{definition}
+ We define $<$ on $\bbN_0$ by 
+ $$x<y\ \text{ if, and only if,}\  y=x+u,\text{ for some }u\in\bbN.$$
+ \end{definition}
+ \begin{enumerate}
+	\item Prove that $1<n$ for all $n\in\bbN, n\neq 1.$
+	\item Prove that if $a, x, y\in\bbN$ with $x < y$ then $a\cdot x < a \cdot y$.
+\end{enumerate}
+
+\item
+
+\begin{definition}
+For $n\in \bbN$ and $k\in\bbN_0,$ we define $n^k$ inductively by
+\[n^0=1,\]
+\[n^{k+1}=n\cdot n^k.\]
+\end{definition}
+ 
+
+\begin{enumerate}
+\item Prove that $n<n^2$ for all $n\in\bbN\backslash\{1\}.$  
+\item Prove that $n^k<n^{k+1}$ for all $n\in\bbN\backslash\{1\}.$
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+ 
+ \end{enumerate}
+
+
+
+
+\end{document}

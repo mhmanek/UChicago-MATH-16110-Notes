@@ -1,0 +1,596 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+%\input{rgb}
+%----------Packages----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage[mathcal]{eucal}
+\usepackage[all]{xy}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage{fullpage}  %%smaller margins
+%----------Commands----------
+
+%%penalizes orphans
+\clubpenalty=9999
+\widowpenalty=9999
+
+
+
+
+
+%% bold math capitals
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+%% blackboard bold math capitals
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% script math capitals
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\emptyset}{\O}
+
+\providecommand{\abs}[1]{\lvert #1 \rvert}
+\providecommand{\norm}[1]{\lVert #1 \rVert}
+
+
+\providecommand{\ar}{\rightarrow}
+\providecommand{\arr}{\longrightarrow}
+
+\renewcommand{\_}[1]{\underline{ #1 }}
+
+
+\DeclareMathOperator{\ext}{ext}
+
+\newcommand{\head}[1]{
+	\begin{center}
+		{\large #1}
+		\vspace{.2 in}
+	\end{center}
+	
+	\bigskip 
+}
+\newcommand{\hint}[2][Hint]{
+	
+	(#1: #2)
+}
+
+%----------Theorems----------
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\newtheorem*{axiom4}{Axiom 4}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{nondefinition}[theorem]{Non-Definition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{warning}[theorem]{Warning}
+
+\newtheorem{exercise*}{Exercise 3.26}
+
+\numberwithin{equation}{subsection}
+
+
+%----------Title-------------
+
+\newcommand{\hide}[1]{{\color{red} #1}} 
+\newcommand{\com}[1]{{\color{blue} #1}} 
+\newcommand{\meta}[1]{{\color{green} #1}} 
+\begin{document}
+
+\head
+{MATH 161, Autumn 2024\\ SCRIPT 5: Connectedness and Boundedness} 
+
+
+
+
+
+\setcounter{section}{5}   
+
+
+
+We introduce a new axiom for a continuum $C$ and derive many interesting properties from it.  From now on, we will always assume that $C$ satisfies axiom 4 (as well as axioms 1,2 and 3).
+
+\medskip
+
+\begin{axiom4}
+A continuum is connected.
+\end{axiom4}
+
+
+
+\begin{theorem}
+The only subsets of a continuum $C$ that are both open and closed are $\emptyset$ and~$C$.
+\end{theorem}
+\begin{proof}
+Assume $M \subset C$ such that $M \neq C, M \neq \emptyset$, and $M$ is both open and closed. Then, $C \setminus M$ must be both open and closed.
+
+Since we know that $M \subset C$, there must be some $x \in C$ such that $x \notin M$, i.e., $x \in C\setminus M$.
+
+Then, $C = M \cup (C \setminus M)$, where $M$ and $C \setminus M$ are nonempty, disjoint, and open. Hence, $C$ is disconnected, and this contradicts Axiom 4.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\begin{corollary}  Every region is infinite.
+\begin{proof}
+Let $R = \_{ab}$ be a finite region. We know that all regions are open, hence $R$ is open. Finite sets are closed, hence $R$ is closed.
+
+$a \in C, a \notin R$, hence $R \neq C$. We know that all regions are nonempty, hence $R \neq \emptyset$.
+
+Then, $R$ is a set that is nonempty, not equal to $C$, and is both open and closed. This is a contradiction.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{corollary}  Every point of $C$ is a limit point of $C$.  
+
+\begin{proof}
+Let $x \in C$, then we want to show that $x \in LP(C)$. We know that every region is infinite, hence any region that contains $x$ must contain other points.
+
+Hence, for all regions $R$ such that $x \in R$, we have that $R \cap (C \setminus \{x\}) \neq \emptyset.$ Hence, $x \in LP(C)$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{corollary}
+
+\begin{corollary}  Every point of the region $\_{ab}$ is a limit point of $\_{ab}$.
+\begin{proof}
+Suppose there exists some $x \in \_{ab}$ such that $x \notin LP(\_{ab})$. Then, there exists a region $R \in C$ such that $x \in R$ and $R \cap (\_{ab} \setminus \{x\}) = \emptyset.$
+
+Then, $S = R \cap \_{ab}$ is a region such that $S = \{x\}$. 
+
+Hence, $S$ is finite, but all regions are infinite. This is a contradiction.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+
+
+
+We will now introduce boundedness.   The first definition should be intuitively clear.  The second is subtle and powerful.  
+
+
+\begin{definition}  Let $X$ be a subset of $C$.  A point $u$ is called an \emph{upper bound} of $X$ if for all $x \in X$, $x \leq u$.  A point $l$ is called a \emph{lower bound} of $X$ if for all $x \in X$, $l \leq x$.  If there exists an upper bound of $X$, then we say that $X$ is \emph{bounded above}.  If there exists a lower bound of $X$, then we say that $X$ is \emph{bounded below}.  If $X$ is bounded above and below, then we simply say that $X$ is \emph{bounded}.
+\end{definition}
+
+
+\begin{definition}  Let $X$ be a subset of $C$.  We say that $u$ is a \emph{least upper bound} of $X$ and write $u = \sup X$ if:
+\begin{enumerate}
+\item  $u$ is an upper bound of $X$, and
+\item  if $u'$ is an upper bound of $X$, then $u \leq u'$.
+\end{enumerate}
+We say that $l$ is a \emph{greatest lower bound} and write $l = \inf X$ if:
+\begin{enumerate}
+\item $l$ is a lower bound of $X$, and
+\item if $l'$ is a lower bound of $X$, then $l' \leq l$.
+\end{enumerate}
+\end{definition}
+
+\noindent The notation $\sup$ comes from the word \emph{supremum}, which is another name for least upper bound.  The notation $\inf$ comes from the word \emph{infimum}, which is another name for greatest lower bound.
+
+\begin{exercise}  If $\sup X$ exists, then it is unique, and similarly for $\inf X$.
+\begin{proof}
+We want to show that if $u = \sup X, u' = \sup X$, then $u = u'$.
+
+Since $u$ is an upper bound and $u'$ is a supremum, we have that $u \leq u'$.
+
+Since $u'$ is an upper bound and $u$ is a supremum, we have that $u' \leq u$.
+
+Hence, $u = u'$. Analogous reasoning for infimum completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise}
+
+\begin{exercise} If $X$ has a first point $L,$ then $\inf X$ exists and equals $L.$ Similarly, if $X$ has a last point $U,$ then $\sup X$ exists and equals $U.$
+\begin{proof}
+Since $L$ is a first point, for all $x \in X, L \leq x$. Thus, $L$ is a lower bound. Hence, if $L'$ is a lower bound, $L' \leq L$. Hence, $\inf X = L$.
+
+Analogous reasoning for infimum completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise}
+
+
+\begin{exercise} For this exercise, we assume that $C=\bbR.$ Find $\sup X$ and $\inf X$ for each of the following subsets
+of $\bbR,$ or state that they do not exist. You need not give proofs.
+\begin{enumerate}
+\item $X=\bbN$
+\begin{proof}
+$\sup$ does not exist. $\inf = 1$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item $X=\bbQ$
+\begin{proof}
+$\sup$ and $\inf$ do not exist.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item $X=\{\frac1n\mid n\in\bbN\}$
+\begin{proof}
+$\sup = 1$ and $\inf = 0$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item $X=\{x\in\bbR\mid 0<x<1\}$
+\begin{proof}
+$\sup = 1$ and $\inf = 0$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item  $X=\{3\}\cup \{x\in\bbR\mid -7\leq x\leq -5\}$ 
+\begin{proof}
+$\sup = 3$ and $\inf = -7$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{enumerate}
+\end{exercise}
+
+
+
+The following lemma is extremely useful when dealing with suprema; an analogous statement can be made for infima.
+\begin{lemma} 
+\label{lem1}
+Suppose that $X$ is a subset of $C$ and $s = \sup X$ exists.
+If $p<s$, then there exists an $x\in X$ such that $p < x \le s$.
+
+\begin{proof}
+Suppose there is no $x \in X$ such that $p<x$, then for all $x \in X$, $x \leq p$. Then, $p$ is an upper bound of $X$.
+
+Since $p<s$, we have an upper bound less than $\sup X$, and this is a contradiction.
+
+Hence, there must exist an $x \in X$ such that $p<x\leq s$.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{lemma} 
+
+
+\begin{theorem}  Let $a < b$.  The least upper bound and greatest lower bound of the region $\_{ab}$ are:
+\[
+\sup \_{ab} = b \quad \text{and} \quad \inf \_{ab} = a.
+\]
+
+\begin{proof}
+For all $x \in \_{ab}, x \leq b$. Hence, $b$ is an upper bound of $\_{ab}$. Suppose $u \in \_{ab}$ is an upper bound such that $u < b$. Since regions are nonempty, there exists $m \in \_{ub}$, i.e., $u<m<b$, hence $u$ is not an upper bound. Thus, $\sup \_{ab} = b$.
+
+For all $x \in \_{ab}, x \geq a$. Hence, $a$ is a lower bound of $\_{ab}$. Suppose $l \in \_{ab}$ is a lower bound such that $l >a$. Since regions are nonempty, there exists $m \in \_{al}$, i.e., $a<m<l$, hence $l$ is not a lower bound. Thus, $\inf \_{ab} = a$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+
+
+
+\begin{lemma}  Let $C$ satisfy Axioms 1-3, but not necessarily Axiom 4. Suppose also that all regions of  $C$ are nonempty.
+Let $X$ be a subset  of $ C$ and suppose  $\sup X$ exists. Then $\sup X\in \overline{X}.$ Similarly, $\inf X\in \overline{X}.$
+\begin{proof}
+We know that $\overline{X} = \{x \in C \mid \text{ for all regions } R \text{ containing } x, R \cap X \neq \emptyset\}$. Hence, it suffices to show that for all regions $R$ containing $\sup X$, $R \cap X \neq \emptyset$, and similarly for $\inf X$.
+
+Let $R$ be a region containing $\sup X$. Then $R$ can be written as $\_{ab}$, such that $a<\sup X<b$. By Lemma 5.10, there exists $x \in X$ such that $a<x\leq\sup X$, hence $x \in R \cap X$, hence $R \cap X \neq \emptyset$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{lemma} 
+
+\begin{corollary} Let $X$ be a subset of a connected continuum. Suppose that $\sup X$ exists. Then $\sup X\in \overline{X}.$ Similarly, $\inf X\in \overline{X}.$
+\begin{proof}
+By Corollary 5.2, all regions of a connected continuum are infinite, hence they are nonempty. Then, by Lemma 5.12, $\sup X \in \overline{X}$ and $\inf X \in \overline{X}$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{corollary}  Both $a$ and $b$ are limit points of the region $\underline{ab}$.
+\begin{proof}
+We know that $a = \inf \_{ab}$ and $b = \sup \_{ab}$, hence $a, b \in \overline{\_{ab}}$.
+
+Thus, $a, b \in \_{ab} \cup LP(\_{ab})$, but $a,b \notin \_{ab}$. Hence, $a, b \in LP(\_{ab})$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+Let $[a, b]$ denote the closure $\overline{\_{ab}}$ of the region $\_{ab}$.  
+
+\begin{corollary}  $[a, b] = \{x \in C \mid a \leq x \leq b  \}$.
+\begin{proof}
+We know that $a,b \in LP(\_{ab})$, hence $(\{a\}\cup\{b\}\cup\_{ab}) \subset [a, b]$.
+
+Also, $C \setminus (\{a\}\cup\{b\}\cup\_{ab}) = \ext(\_{ab})$. We know that $LP(\_{ab}) \cap \ext(\_{ab}) = \emptyset$.
+
+Hence, $[a, b] = \{a\}\cup\{b\}\cup\_{ab} = \{x \in C \mid a \leq x \leq b  \}$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+
+
+\begin{lemma}  Let $X \subset C$ and define:
+\[
+\Psi(X) = \{ x \in C \mid \text{$x$ is not an upper bound of $X$} \}.
+\]
+Then $\Psi(X)$ is open.
+Define:
+\[
+\Omega(X) = \{ x \in C \mid \text{$x$ is not a lower bound of $X$} \}.
+\]
+Then $\Omega(X)$ is open.
+\begin{proof}
+Let $x \in \Psi(X)$. Then, there exists some $y \in X$ such that $y>x$. 
+
+Construct $\_{ay} = \{k \in C \mid a < k < y \}$ such that $a<x$ (since $C$ has no first point). Then, $x \in \_{ay}$.
+
+It suffices to show that $\_{ay} 
+\subset \Psi(X)$ (by Theorem 4.9). Let $k \in \_{ay}$, then $a<k<y$, hence there exists $y \in X$ such that $y>k$, hence $k$ is not an upper bound of $X$. Thus, $k \in \Psi(X)$.
+
+Analogous reasoning for $\Omega(X)$ completes the proof.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{lemma}
+
+
+\begin{theorem}  Suppose that $X$ is nonempty and bounded above. Then $\sup X$ exists. Similarly, if $X$ is nonempty and bounded below, then $\inf X$ exists.
+\begin{proof}
+Let $A = \{a \in C \mid a \text{ is an upper bound of } X \}$. Since $X$ is bounded above, $A \neq \emptyset$ and we also know that $X \neq \emptyset$. 
+
+Then, by the definition of upper bound, there exists $x\in X$ such that for all $a \in A$, $x \leq a$. Hence, $x$ is a lower bound of $A$.
+
+Let $B = \{b \in C \mid b \text{ is a lower bound of } A \}$. Since $x \in B, B\neq \emptyset$. We know from Lemma 5.16 that $B$ is closed.
+
+Let $k \in C$ and suppose $k \notin A$, i.e., $k$ is not an upper bound of $X$. Then, there exists $x_0 \in X$ such that $x_0>k$.
+
+For all $a \in A$, $x_0 \leq a$, hence $k \leq a$, hence $k \in B$.
+
+Let $s \in A \cap B$. We want to show that $s = \sup X$.
+
+$s \in A$ implies $s$ is an upper bound of $X$. $s \in B$ implies $s$ is a lower bound of $A$. Hence, for all $a \in A$, $a \geq s$, where $a$ is an upper bound of $X$.
+
+Hence, $s$ is the least upper bound of $X$, hence $s = \sup X$.
+
+Analogous reasoning for $\inf X$ completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+\begin{corollary}  Every nonempty closed and bounded set has a first point and a last point.
+\begin{proof}
+Let $X$ be nonempty, closed and bounded. Then, $X = \overline{X}$.
+
+Since $X$ is bounded above and bounded below, $\sup X$ exists and $\inf X$ exists.
+
+Since $\sup X, \inf X \in \overline{X}$, we have that $\sup X, \inf X \in X$. Hence, $\sup X$ is the last point of $X$ and $\inf X$ is the first point of $X$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+
+\begin{exercise}  Is this true for $\mathbb{Q}$?
+\begin{proof}
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise}
+\bigskip
+
+\begin{center}
+{\em Additional Exercises}
+\end{center}
+
+\begin{enumerate}
+\item
+For this exercise, we assume that $C=\bbR.$ Find $\sup X$ and $\inf X$ for each of the following subsets
+of $\bbR,$ or state that they do not exist. You should give proofs.
+\begin{enumerate}
+\item $X=\{-2^n\mid n\in \bbN\}$
+\item $X=\{ x\mid  a\leq x\leq b\}$
+\item $X=\{-1\}\cup\{\frac{1}{n}\mid n\in\bbN\}$
+\item $X=\bigcup_{k\geq 0}\{\frac{k}{n}\mid n\in\bbN\}.$
+\end{enumerate}
+
+
+\item Prove that if $A,B$ are subsets of a continuum $C$ and $a\leq b,$ for all $a\in A,b\in B,$ then
+$$\sup A \leq \inf B.$$
+
+\begin{proof}
+Since for all $a\in A,b\in B, b\geq a$, we have that $b$ is an upper bound of $A$. By definition of sup, we know that $\sup A \leq b$ for all $b \in B$.
+
+Since $b \geq \sup A$ for all $b \in B$, we know that $\sup A$ is a lower bound of $B$. Then, by definition of inf, we have that $\inf B \geq \sup A$. This completes the proof.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+
+
+\item
+	Let $a,b \in C$ with $a < b$.  Show that $\underline{ab}$ is a continuum.
+\begin{proof}
+By Corollary 5.2, every region is infinite, hence $\_{ab}$ is nonempty. This satisfies Axiom 1.
+
+Since $\_{ab} \subset C$, the ordering $<_C$ on $C$ restricts $\_{ab}$, i.e., $\_{ab}$ is equipped with the ordering $<_C$. This satisfies Axiom 2.
+
+Suppose $\_{ab}$ has a first point, and let this be denoted by $m$. Then, we know that $a<m<b$. Consider the region $\_{am}$. Since every region is infinite, there exists some $x \in \_{am}$, i.e., $a<x<m$. This contradicts our original assumption that $\_{ab}$ has a first point. Analogous reasoning applies for the last point. This satisfies Axiom 3.
+
+Suppose $\_{ab}$ is disconnected. Then we can write $\_{ab} = A\cup B$, where $A$ and $B$ are disjoint, nonempty and open.
+
+For the first case, suppose there exist $u,v\in\underline{ab}$ such that $\underline{au}\subseteq A$ and $\underline{vb}\subseteq B$. Then we want to show that $A\cup\{x\in C \mid x\leq a\}$ and $B\cup\{x\in C \mid x\geq b\}$ are non-empty disjoint open subsets of $C$ whose union is $C$.
+
+$a \in A\cup\{x\in C \mid x\leq a\}$ and $b \in B\cup\{x\in C \mid x\geq b\}$, hence they are nonempty.
+
+Since $\underline{au} \subseteq A$, we have that $A\cup\{x\in C \mid x\leq a\} = A\cup\{x\in C \mid x<u\}$. This final expression is the union of two open sets, hence it is open. Analogously, $B\cup\{x\in C \mid x\geq b\}=B\cup\{x\in C \mid x>v\}$ is open.
+
+Consider $y \in A$. By our original assumption, $A \cap B = \emptyset$, hence $y \notin B$. Also, since $\underline{vb} \subseteq B$, we have that $\underline{vb} \cap A = \emptyset$, hence $y \notin \{x\in C \mid x>v\}$. Next consider $y \in \{x\in C \mid x<u\}$. Since $A$ and $B$ are disjoint, we have that $u<v$, hence we know that $y \notin \{x\in C \mid x>v\}$. Since $\underline{au} \subseteq A$, hence $y \notin B$. Hence, we have that $A\cup\{x\in C \mid x<u\}$ and $B\cup\{x\in C \mid x>v\}$ are disjoint.
+
+Take some $k \in C$. If $k \in \underline{ab}$, then $k \in A \cup B$. If $k \in C \setminus \underline{ab}$, then either $k \leq a$ in which case $k \in \{x\in C \mid x<u\}$, or $k \geq b$ in which case $k \in \{x\in C \mid x>v\}$. Hence, $A\cup\{x\in C \mid x<u\} \cup B\cup\{x\in C \mid x>v\} = C$. 
+
+To consider the general case, let $u\in A$ and $v\in B$ and without loss of generality suppose that $u < v$. We define the sets $A' = \{x\in\underline{ab} \mid x\in A, x < v\}\cup\underline{au}$ and $B' = \{x\in\underline{ab} \mid x\in B, x > u\}\cup\underline{vb}$. We want to show that $A'$ and $B'$ are non-empty disjoint open subsets of $\underline{ab}$ whose union is $\underline{ab}$. This reduces the general case to the previous case.
+
+We have that $A' = \{x\in\underline{ab} \mid x\in A, x < v\}\cup\underline{au} = \{A \cap \underline{av}\}\cup \underline{au}$. Analogously, $B' = \{x\in\underline{ab} \mid x\in B, x >u\}\cup\underline{vb} = \{B \cap \underline{ub}\}\cup \underline{vb}$. We know that $A, \underline{av}$ and $\underline{au}$ are open, hence $A'$ is open. Similarly, $B, \underline{ub}$ and $\underline{vb}$ are open, hence $B'$ is open.
+
+$u \in A'$ and $v \in B'$, hence $A'$ and $B'$ are nonempty.
+
+Consider $y \in A \cap \underline{av}$. $A$ and $B$ are disjoint, hence $y \notin B \cap \underline{ub}$, and $\underline{av} \cap \underline{vb} = \emptyset$, hence $y \notin B'$. Next consider $y \in \underline{au}$. We know that $\underline{au} \cap \underline{ub} = \emptyset$ and $\underline{au} \cap \underline{vb} = \emptyset$, hence $y \notin B'$. Thus, $A'$ and $B'$ are disjoint.
+
+Hence, if $\underline{ab}$ is disconnected, then the continuum $C$ must be disconnected and this contradicts Axiom 4. Hence, $\underline{ab}$ is connected. This satisfies Axiom 4.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+\item
+Assume that $C$ satisfies Axioms 1, 2 and 3. Do not assume that $C$ satisfies Axiom 4. Suppose also that
+\begin{enumerate}
+\item every nonempty subset $X$ of $C$ that is bounded above has a supremum 
+\item all regions of $C$ are nonempty.
+\end{enumerate}
+Show that $C$ is connected. 
+
+{\it Hint: Argue by contradiction. }
+
+\begin{proof}
+Suppose $C$ is disconnected. Then, we can write $C = A \cup B$, where $A,B$ are disjoint, nonempty and open.
+
+Case 1: $A$ is bounded above. Then, by condition (a), we know that $\sup A$ exists. Let $s = \sup A$.
+
+Subcase 1a: Suppose $s \in A$. Since $A$ is open, there exists a region $R \subset A$ such that $s \in R$. Let $R = \_{pq}$, then we have that $p<s<q$. Then consider the region $\_{sq} \subset A$. Since all regions are nonempty by condition (b), there exists $y \in \_{sq}$. Then, $y \in A, y>s$, and this contradicts the assumption that $s$ is the supremum of $A$.
+
+Subcase 1b: Suppose $s \in B$. Since $B$ is open, there exists a region $R \subset B$ such that $s \in R$. Let $R = \_{pq}$, then we have that $p<s<q$. Then consider the region $\_{ps} \subset B$. Since all regions are nonempty by condition (b), there exists $y \in \_{ps}$, i.e. $p<y<s$. Then, we claim that $y$ is an upper bound of $A$, i.e., for all $a \in A, a \leq y$. Suppose there exists some $a_0$ such that $a_0 > y$. Since $s = \sup A, s \geq a_0$. But $a_0 \in A, s \in B$ hence $a_0 \neq s$, hence $s > a_0$. Then we have that $y<a_0<s$, i.e., $a \in \_{ys}$. However, $\_{ys} \subset B$ and this is a contradiction. 
+
+This completes case 1. Next, we will show that the general case can be reduced to case 1.
+
+Case 2: $A$ is not bounded above. Let $a \in A, b\in B$, and without loss of generality suppose $a <b$. Then, define new sets $A' = A \cap \{x \in C \mid x < b\}$ and $B' = B \cup \{x \in C \mid x > b\}$. We want to show that $A'$ is bounded above, and that $A'$ and $B'$ are nonempty, disjoint and open sets such that $A' \cup B' = C$. 
+
+$B$ is open and $\{x \in C \mid x > b\}$ is open, hence $B'$ is the union of two open sets and is therefore open. $A$ is open and $\{x \in C \mid x < b\}$ is open, hence $A'$ is the intersection of two open sets and is therefore open. 
+
+$b \in B$, hence $b \in B'$, hence $B'$ is nonempty. $a \in A$ and $a <b$ hence $a \in A'$, hence $A'$ is nonempty.
+
+Suppose $m \in A'$. Then, $m \in A$ implies $m \notin B$ and $m \in \{x \in C \mid x < b\}$ implies $m \notin \{x \in C \mid x > b\}$. Hence, $m \notin B'$, thus $A' \cap B' = \emptyset$.
+
+We can rewrite $A' = \{x \in A \mid x < b\}$. Hence, $b$ is an upper bound of $A'$, hence $A'$ is bounded above.
+
+We can write $\{x \in C \mid x > b\} = \{x \in B \mid x > b\} \cup \{x \in A \mid x > b\}$. Then, $A' \cup B' = B \cup \{x \in A \mid x < b\} \cup \{x \in A \mid x > b\} = B \cup A = C$ (since $a \neq b$).
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}

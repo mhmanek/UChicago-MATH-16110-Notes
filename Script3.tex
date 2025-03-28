@@ -1,0 +1,783 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+%\input{rgb}
+%----------Packages----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage[all]{xy}
+\usepackage[mathcal]{eucal}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage{fullpage}  %%smaller margins
+%----------Commands----------
+
+%%penalizes orphans
+\clubpenalty=9999
+\widowpenalty=9999
+
+
+
+
+
+%% bold math capitals
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+%% blackboard bold math capitals
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% script math capitals
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\emptyset}{\O}
+
+\providecommand{\abs}[1]{\lvert #1 \rvert}
+\providecommand{\norm}[1]{\lVert #1 \rVert}
+
+
+\providecommand{\ar}{\rightarrow}
+\providecommand{\arr}{\longrightarrow}
+
+\renewcommand{\_}[1]{\underline{ #1 }}
+
+
+\DeclareMathOperator{\ext}{ext}
+
+\newcommand{\head}[1]{
+	\begin{center}
+		{\large #1}
+		\vspace{.2 in}
+	\end{center}
+	
+	\bigskip 
+}
+
+%----------Theorems----------
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\newtheorem{axiom}{Axiom}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{nondefinition}[theorem]{Non-Definition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{warning}[theorem]{Warning}
+
+
+\numberwithin{equation}{subsection}
+
+
+%----------Title-------------
+
+
+\begin{document}
+
+\head{MATH 161, Autumn 2024\\  SCRIPT 3: Introducing a Continuum }
+
+
+
+
+This sheet introduces a continuum $C$ through a series of axioms.
+
+
+\setcounter{section}{3}   
+
+\begin{axiom} A continuum is a nonempty set $C$.  
+\end{axiom}
+
+We often refer to elements of $C$ as \emph{points}.
+
+
+\begin{definition}  Let $X$ be a set.  An \emph{ordering} on the set $X$ is a subset $<$ of $X \times X$, with elements $(x, y) \in <$ written as $x < y$, satisfying the following properties:
+
+\begin{itemize}
+\item[(a)] {\it (Trichotomy) }
+
+For all $x, y \in X$ exactly one of the following holds:
+ $x < y,\  y < x\   \text{or } x=y.$ 
+\item[(b)] {\it (Transitivity)} For all $x, y, z \in X$, if $x < y$ and $y < z$ then $x < z$.
+\end{itemize}
+\end{definition}
+
+
+\begin{remarks}
+\begin{enumerate}
+\item[a)]  In mathematics ``or'' is understood to be inclusive unless stated otherwise. So in a) above, the word ``exactly'' is needed.
+\item[b)] $x<y$ may also be written as $y>x.$
+\item[c)] By $x \leq y$, we mean $x < y$ or $x = y$;  similarly for $x \geq y$.
+\end{enumerate}
+\end{remarks}
+
+
+\begin{axiom}  A continuum $C$ has an ordering $<$.
+\end{axiom}
+
+
+
+\begin{definition}  If $A \subset C$ is a subset of $C$, then a point $a \in A$ is a \emph{first} point of $A$ if, for every element $x \in A$, either $a < x$ or $a = x$.  Similarly, a point $b \in A$ is called a \emph{last} point of $A$ if, for every $x \in A$, either $x < b$ or $x = b$.
+\end{definition}
+
+\begin{lemma}  If $A$ is a nonempty, finite subset of a continuum $C$, then $A$ has a first and last point.
+\begin{proof}
+We prove this by induction on $|A| = n \in \bbN$.
+
+For the base case, $n=1$, so let the singleton set $A = \{x\}$. Thus, $x$ is both the first and last point of $A$.
+
+For the inductive step, we want to show that if the set $A$ with cardinality $n$, denoted $A_n$, has a first and last point, then $A_{n+1}$ has a first and last point.
+
+Consider $A' = A_{n+1} \setminus \{x\}$ for some $x \in A_{n+1}$. Then, we know that $|A'|=n$, so $A'$ has a first point (let this be $F$) and a last point (let this be $L$).
+
+Then, consider $x_0 \in A_{n+1}$. By the ordering $<$ on $C$, we know that either $x_0 < F$ or $x_0 = F$ or $x_0 > F$. 
+
+If $x < F$, then $x$ is the first point of $A_{n+1}$. If $x = F$, then $x \in A_{n+1} \setminus \{x\}$ and this is a contradiction. If $x > F$, then $F$ is the first point of $A_{n+1}$.
+
+Therefore, if a set with cardinality $n$ has a first and last point, then a set with cardinality $n+1$ has a first and last point. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{lemma}
+
+\begin{theorem}  Suppose that $A$ is a set of $n$ distinct points in a continuum $C$, or, in other words, $A \subset C$ has cardinality $n$.  Then symbols $a_1, \dotsc, a_n$ may be assigned to each point of $A$ so that $a_1 < a_2 < \dotsm < a_n$, i.e. $a_i < a_{i + 1}$ for $1 \leq i \leq n - 1$.
+
+\begin{proof}
+We prove this by induction on $n$. 
+
+For the base case, $n=1$, so let the singleton set $A = \{a\}$. Then, $a=a_1$ and this completes the base case.
+
+For the inductive step, consider the set $A_{n+1}$ with cardinality $n+1$. By Lemma 3.4, we know that $A_{n+1}$ has a last point (let this be denoted by $a_{max}$). Define $A' = A \setminus \{a_{max}\}$. Then, we know that $|A'|=n$.
+
+By the inductive hypothesis, $A'$ is a set of cardinality $n$, hence $A'$ can be written as $a_1 < a_2 < \dots < a_n$. Then, we know that $A$ can be written as $a_1 < a_2 < \dots < a_n < a_{max}$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+\begin{definition}  If $x, y, z \in C$ and either (i) both $x < y$ and $y < z$ or (ii) both $z<y$ and $y<x,$ then we say that $y$ is \emph{between} $x$ and $z$.
+\end{definition}
+
+\begin{corollary}  Of three distinct points in a continuum, one must be between the other two.
+
+\begin{proof}
+Let $x,y,z \in C$ such that $x \not=y, x \not=z, y \not=z$. 
+
+Then, let $A \subset C$ such that $A = \{x,y,z\}$. We know that $A$ can be expressed as $\{a_1,a_2,a_3\}$, and moreover these can be written as $a_1 < a_2 < a_3$. Then, $a_1 < a_2$ and $a_2 < a_3$, so $a_2$ is between $a_1$ and $a_3$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{corollary}
+
+\begin{axiom} A continuum $C$ has no first or last point.
+\end{axiom}
+
+
+In the next exercise we show that the integers and the rationals both have orderings that satisfy Axioms 1-3.
+
+\begin{exercise}
+\begin{enumerate}
+\item[a)]  We define a relation $<$ on $\bbZ$ by $m<n$ if $n=m+c$ for some $c\in \bbN.$  Show that,
+$\bbZ,$ with the ordering $<,$ satisfies Axioms 1-3.
+
+\begin{proof}
+We know that $-1 \in \bbZ$, hence $\bbZ \not= \emptyset$, so it satisfies Axiom 1.
+
+For Axiom 2, we want to show that transitivity holds for the ordering $<$. We want to show that if $x_1<x_2$ and $x_2<x_3$, then $x_1<x_3$.
+
+We know that $x_2 = x_1 + c_1$ and $x_3 = x_2 + c_2$. Hence, $x_3 = x_1 + c_1 + c_2$. Let $c_3 = c_1 + c_2$, then $x_3 = x_1 + c_3$, hence $x_3 > x_1$.
+
+We know that $\bbZ$ goes from negative infinity to positive infinity, so it has no first or last point, so it satisfies Axiom 3. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item[b)] Show that, for any $p=\left[\frac{a}{b}\right]\in\bbQ,$ there is some $(a_1,b_1)\in p$ with $0<b_1.$
+
+\begin{proof}
+We know that $b \not= 0$, so we proceed by cases.
+
+Case 1: $b > 0$ and we are done.
+
+Case 2: $b < 0$. Then, let $a' = -a$ and $b' = -b$. We want to show that $[\frac{a}{b}] = [\frac{a'}{b'}]$. 
+
+$a \cdot -b = -a \cdot b = -ab$, hence $ab' \sim ba'$, hence $(a,b) \sim (a',b')$, hence $[\frac{a}{b}] = [\frac{a'}{b'}]$. Then, $p=[\frac{a'}{b'}]$ and this completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item[c)] We define a relation $<_{\bbQ}$ on $\bbQ$ as follows. 
+For $p,q\in\bbQ,$ let $(a_1,b_1)\in p$ be such that $0<b_1,$ and let $(a_2,b_2)\in q$ be such that $0<b_2.$  Then we define $p<_{\bbQ} q$ if $a_1b_2<a_2 b_1.$ 
+Show that $<_{\bbQ}$ is a well-defined relation on $\bbQ.$
+
+\begin{proof}
+We want to show that if $[\frac{a}{b}] = [\frac{a'}{b'}]$ and $[\frac{c}{d}] = [\frac{c'}{d'}]$ with $b,b',d,d' > 0$ and $ad < bc$, then $a'd' < b'c'$. 
+
+We know that $ab' = a'b$ and $cd' = c'd$. Hence $ab'dd' = a'bdd'$, where we are multiplying by $dd'$ since $d,d'>0$. 
+
+Then, $ab'dd' = adb'd' < bcb'd'$. Therefore $ab'dd' < bcb'd'$, hence $ab'dd' < cd'bb'$, hence $ab'dd' < c'dbb'$.
+
+Hence, $a'd'bd < b'c'bd$, hence $a'd'<b'c'$. This completes the proof.
+
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item[d)] Show that $\bbQ,$ with the ordering $<_{\bbQ},$ satisfies Axioms 1-3.
+
+\begin{proof}
+We know that $[1/2] \in \bbQ$, hence $\bbQ \not= \emptyset$, so it satisfies Axiom 1.
+
+For Axiom 2, we want to show that transitivity holds for the ordering $<$. We want to show that if $[\frac{a}{b}] < [\frac{c}{d}]$ and $[\frac{c}{d}] < [\frac{e}{f}]$, then $[\frac{a}{b}] < [\frac{e}{f}]$.
+
+Since $ad < bc$ and $cf < de$, we know that $adf < bcf$ and $bcf < bde$, hence $adf < bde$ and $af < be$. 
+
+We know that $\bbQ$ goes from negative infinity to positive infinity, so it has no first or last point,
+so it satisfies Axiom 3. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{enumerate}
+\end{exercise}
+
+\begin{definition} If $a,b\in C$ and $a < b$, then the set of points between $a$ and $b$ is called a \emph{region}, denoted by $\_{ab}$.  
+\end{definition}
+
+\begin{warning}  One often sees the notation $(a, b)$ for regions.  We will reserve the notation $(a, b)$ for ordered pairs in a product $A \times B$.  These are very different things.  
+\end{warning}
+
+\begin{theorem} If $x$ is a point of a continuum $C$, then there exists a region $\_{ab}$ such that $x \in \_{ab}$.
+\begin{proof}
+By the axioms of a continuum, we know that $C$ does not have a first point, hence there exists $a \in C$ such that $a <x$. Similarly, we know that $C$ does not have a last point, hence there exists $b \in C$ such that $x<b$.
+
+Since $a < x <b$, we know that there exists a region $\_{ab}$ such that $x \in \_{ab}$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+\end{theorem}
+
+We now come to one of the most important definitions of this course:
+
+\begin{definition}
+Let $A$ be a subset of a continuum $C$.  A point $p$ of $C$ is called a \emph{limit point} of $A$ if every region $R$ containing $p$ has nonempty intersection with $A \setminus \{p\}$.  Explicitly, this means:
+\[
+\text{for every region $R$ with $p \in R$, we have $R \cap (A \setminus \{p \}) \neq \emptyset$.}
+\]
+\end{definition}
+
+Notice that we do not require that a limit point $p$ of $A$ be an element of $A$. We will use the notation $LP(A)$ to denote the set of limit points of $A.$ 
+
+\begin{theorem} If $A \subset B$, then $LP(A)\subset LP(B).$
+
+\begin{proof}
+Suppose $x \in LP(A)$. Then, for every region $R$ with $x \in R$, there exists $y \in R \cap (A \setminus \{x\})$ such that $y \not = x, y \in R, y \in A, y\in B$, where the last statement follows since $A \subset B$.
+
+Then, we know that since $y \in R, y \not = x, y \in B$, therefore $ y \in R 
+ \cap (B \setminus \{x\})$. Hence, $R 
+ \cap (B \setminus \{x\}) \not = \emptyset$, therefore $x \in LP(B)$.
+
+Hence, $LP(A) \subset LP(B)$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+
+
+\begin{definition} If $\_{ab}$ is a region in a continuum $C$, then $C \setminus (\{a\} \cup \_{ab} \cup \{b\})$ is called the \emph{exterior} of $\_{ab}$ and is denoted by $\ext{\_{ab}}$.
+\end{definition}
+
+
+\begin{lemma} If $\_{ab}$ is a region in a continuum $C,$ then
+$$\ext{\_{ab}}=\{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}.$$
+
+\begin{proof}
+Suppose $x \in \text{ext } \_{ab}$. Then, $x \notin \{a\}, x \notin \{b\}, x \in \_{ab}$. Hence, either $x<a$ or $b<x$. Therefore, $x \in \{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}$. Hence, $\ext{\_{ab}} \subset \{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}.$
+
+Suppose $x \in \{x\in C\mid x<a\}\cup\{x\in C\mid b<x\}$. Then, $x \notin \{a\} \cup \_{ab} \cup \{b\}$. Hence, $x \in \ext{\_{ab}}$. Hence, $\{x\in C\mid x<a\}\cup\{x\in C\mid b<x\} \subset \ext{\_{ab}}$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{lemma}
+
+
+
+\begin{lemma}  No point in the exterior of a region is a limit point of that region.  No point of a region is a limit point of the exterior of that region.
+
+\begin{proof}
+Suppose $x \in \ext{\_{ab}}$.
+
+Case 1: $x < a$. Let $c \in C$ such that $c < x< a$. Then, $\_{ca} \cap \_{ab} = \emptyset = \_{ca} \cap \_{ab} \setminus \{x\}$. Hence, $x \notin LP(\_{ab})$.
+
+Case 2: $x > b$. Let $c \in C$ such that $b< x< c$. Then, $\_{bc} \cap \_{ab} = \emptyset = \_{bc} \cap \_{ab} \setminus \{x\}$. Hence, $x \notin LP(\_{ab})$.
+
+This proves that no point in the exterior of a region is a limit point of that region.
+
+Next, suppose $x \in \_{ab}$. Then, $x \notin \ext{\_{ab}}.$ Hence, $\ext{\_{ab}} \setminus \{x\} = \ext{\_{ab}}$. Therefore, $\_{ab} \cap (\ext{\_{ab}} \setminus \{x\}) = \_{ab} \cap \ext{\_{ab}} = \emptyset$. Hence, $x \notin LP(\ext{\_{ab}})$. 
+
+This proves that no point of a region is a limit point of the exterior of that region.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{lemma}
+
+
+\begin{theorem}  If two regions have a point $x$ in common, their intersection is a region containing $x$.
+
+\begin{proof}
+Let $x \in \_{ab}, x \in \_{cd}$, and let $e = \max\{a,c\}, f =\min \{b,d\}$. Then, we know that $a <x<b$ and $c<x<d$, hence $\max\{a,c\}<\min \{b,d\}$, hence $e<f$. We want to show that $ \_{ab} \cap  \_{cd}= \_{ef}$.
+
+Suppose $y \in \_{ab} \cap  \_{cd}$. Then, $a<y<b$ and $c<y<d$, hence $e<y<f$, hence $y \in \_{ef}$, hence $(\_{ab} \cap  \_{cd}) \subset \_{ef}$.
+
+Suppose $y \in \_{ef}$. Then, $e<y<f$, hence $\max\{a,c\}<y<\min\{b,d\}$. Hence, $y \in \_{ab}$ and $y \in \_{cd}$, hence $y \in \_{ab} \cap  \_{cd}$. Therefore, $\_{ef} \subset (\_{ab} \cap  \_{cd})$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+\begin{corollary}  If $n$ regions $R_1, \dotsc, R_n$ have a point $x$ in common, then their intersection $R_1 \cap \dotsm \cap R_n$ is a region containing $x$.
+
+\begin{proof}
+We prove this by induction on $n$.
+
+For the base case, we want to show that if two regions $R_1,R_2$ have a point $x$ in common, then their intersection $R_1 \cap R_2$ is a region containing $x$. We know this from Theorem 3.17.
+
+For the inductive step, we want to show that if $n$ regions $R_1, \dotsc, R_n$ have a point $x$ in common and if $R_{n+1}$ is a region containing $x$, then the intersection $R_1 \cap \dotsm \cap R_n \cap R_{n+1}$ is a region containing $x$. 
+
+By the inductive hypothesis, let $M = R_1 \cap \dotsm \cap R_n $ be a region containing $x$. Then, we want to show that $M \cap R_{n+1}$ is a region containing $x$. We know that $M$ and $R_{n+1}$ are regions that contain $x$, so this follows from Theorem 3.17, and this completes the proof.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{corollary}
+
+\begin{theorem}  Let $A, B$ be subsets of a continuum $C$.  Then  $LP(A \cup B)=LP(A)\cup LP(B).$
+
+\begin{proof}
+First, we show that $LP(A) \cup LP(B) \subset LP(A \cup B)$. By Theorem 3.13, we know that $A \subset A \cup B$, so $LP(A) \subset LP(A\cup B)$. Similarly, $B \subset A \cup B$, so $LP(B) \subset LP(A\cup B)$. Hence, $LP(A) \cup LP(B) \subset LP(A\cup B)$.
+
+Next, we show that $LP(A \cup B)  \subset LP(A) \cup LP(B)$.
+Suppose $x \in LP(A \cup B)$, then we want to show that $x \in LP(A) \cup LP(B)$. Suppose $x \notin LP(A) \cup LP(B)$. This is equivalent to $x \notin LP(A), x \notin LP(B)$.
+
+Hence, there exists a region $R_A$ such that $x \in R_A$ and $R_A \cap A \setminus \{x\} = \emptyset$, and there exists a region $R_B$ such that $x \in R_B$ and $R_B \cap B \setminus \{x\} = \emptyset$.
+
+Let a region $R = R_A \cap R_B$. Then, $R \subset R_A$. Hence, $(R \cap A \setminus \{x\}) \subset (R_A \cap A \setminus \{x\})$. Since the RHS is empty, the LHS must also be empty. Similarly, $R \subset R_B$. Hence, $(R \cap B \setminus \{x\}) \subset (R_B \cap B \setminus \{x\})$. Since the RHS is empty, the LHS must also be empty.
+
+$R \cap (A \cup B) \setminus \{x\} = (R \cap A \setminus \{x\}) \cup (R \cap B \setminus \{x\})$. Since both sets on the RHS are empty, their union must be empty, hence the LHS must be empty. However, this contradicts our original assumption that $R \cap (A \cup B) \setminus \{x\} \not= \emptyset$, since $x \in LP(A\cup B)$.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+
+
+\begin{corollary}
+Let $A_1, \dotsc, A_n$ be $n$ subsets of a continuum $C$.  Then  $p$ is a limit point of $(A_1 \cup \dotsm \cup A_n)$ if, and only if, $p$ is a limit point of at least one of the sets $A_k$.
+
+\begin{proof}
+We prove this by strong induction on $n$.
+
+For the base case, let $n=2$. Then, by Theorem 3.19, we know that $LP(A_1 \cup A_2) = LP(A_1) \cup LP(A_2)$.
+
+For the inductive step, suppose $LP(A_1 \cup A_2 \cup \dots \cup A_n) = LP(A_1) \cup LP(A_2) \cup \dots \cup LP(A_n)$. Then, $LP(A_1 \cup A_2 \cup \dots \cup A_n \cup A_{n+1}) = LP(A_1 \cup A_2 \cup \dots \cup A_n) \cup LP(A_{n+1}) = LP(A_1) \cup LP(A_2) \cup \dots \cup LP(A_n) \cup LP(A_{n+1})$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+
+
+\begin{theorem}  If $p$ and $q$ are distinct points of a continuum $C$, then there exist disjoint regions $R$ and~$S$ containing $p$ and $q$, respectively.
+
+\begin{proof}
+We know that $p \not= q$. Since a continuum has an ordering $<$, suppose without loss of generality that $p < q$. Since a continuum does not have a first or last point, let $a,b \in C$ such that $a<p,b>q$.
+
+Case 1: $\exists x \in C$ such that $p<x<q$. Then, let region $R = \_{ax}$ and let region $S = \_{xb}$. 
+
+Since $a<p<x$, we know that $p \in R$. Since $x<q<b$, we know that $q \in S$. 
+
+Suppose $R$ and $S$ are not disjoint, i.e., there exists some $y \in C$ such that $y \in R, y \in S$. Then, $a<y<x$ and $x<y<b$, i.e., $y<x$ and $x<y$, and this contradicts the trichotomy of the ordering $<$. Hence, $R$ and $S$ are disjoint.
+
+Case 2: $\not\exists x \in C$ such that $p<x<q$. Then, let region $R = \_{aq}$ and let region $S = \_{pb}$.
+
+Since $a<p<q$, we know that $p \in R$. Since $p<q<b$, we know that $q \in S$. 
+
+Suppose $R$ and $S$ are not disjoint, i.e., there exists some $y \in C$ such that $y \in R, y \in S$. Then, $a<y<q$ and $p<y<b$, i.e., $p<y<q$, and this contradicts our original assumption that $\not\exists y \in C$ such that $p<y<q$. Hence, $R$ and $S$ are disjoint.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+\begin{corollary}  A subset of a continuum $C$ consisting of one point has no limit points.
+
+\begin{proof}
+Let $A \subset C$ such that $A = \{a\}$. We want to show that $LP(A)=\emptyset$.
+
+Suppose $LP(A) \not= \emptyset$, then let $p \in LP(A)$. It suffices to show that there exists a region $R$ such that $R \cap (A \setminus \{p\}) = \emptyset$.
+
+Case 1: $p = a$. Then, $A \setminus \{p\} = A \setminus \{a\} = \{a\} \setminus \{a\} = \emptyset$. Hence, $R \cap \emptyset = \emptyset$.
+
+Case 2: $p \not= a$. Then, $A \setminus \{p\} = A$. Hence, we want to show that there exists a region $R$ that contains $p$ such that $R \cap A = \emptyset$. It suffices to show that there exists a region $R$ such that $p\in R, a \notin R$.
+
+Subcase 2a: $p>a$. Then, let $b \in C$ such that $b>p$ and let $R = \_{ab}$. Since $a<p<b$, $p \in R$ and $a \notin R$.
+
+Subcase 2b: $p<a$. Then, let $b \in C$ such that $b<p$ and let $R = \_{ba}$. Since $b<p<a$, $p \in R$ and $a \notin R$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{theorem} A finite subset $A$ of a continuum $C$ has no limit points.
+
+\begin{proof}
+Let $A_n \subset C$ such that $|A_n|=n$. Then, we prove this theorem by induction on $n$. 
+
+For the base case, $n=1$, i.e., $A$ consists of one point. Corollary 3.22 completes the base case.
+
+For the inductive step, we want to show that if $LP(A_n)= \emptyset$, then $LP(A_{n+1})=\emptyset$.
+
+We know that any finite subset of a continuum has a last point. Hence, let $a_{max}$ denote the last point of $A_{n+1}$. Then, we know that $|A_{n+1} \setminus \{a_{max}\}| = n$. Hence, by the inductive hypothesis, $LP(A_{n+1} \setminus \{a_{max}\}) = \emptyset$. We also know from Corollary 3.22 that $LP(\{a_{max}\}) = \emptyset$.
+
+By Theorem 3.19, $LP(A_{n+1}) = LP(A_{n+1} \setminus \{a_{max}\}) \cup LP(a_{max}) = \emptyset \cup \emptyset = \emptyset$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+\begin{corollary}  If $A$ is a finite subset of a continuum $C$ and $x \in A$, then there exists a region $R,$ containing $x,$ such that $A \cap R = \{ x \}$.
+
+\begin{proof}
+Since $A$ is finite, $LP(A) = \emptyset$. Hence, there exists some region $R$ such that $x \in R$ and $R \cap A\setminus\{x\} = \emptyset$.
+
+We can write $A \cap R = A \cap (R \setminus \{x\} \cup \{x\}) = (A \cap (R \setminus \{x\})) \cup (A \cap \{x\}) = \emptyset \cup \{x\} = \{x\}$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{corollary}
+
+
+\begin{theorem}  If $p$ is a limit point of $A$ and $R$ is a region containing $p$, then the set $R \cap A$ is infinite.
+
+\begin{proof}
+Assume $R \cap A$ is finite. Then, $LP(R \cap A) = \emptyset$, hence $p \notin LP(R \cap A)$. 
+
+Hence, there exists a region $R'$ such that $p \in R'$ and $R' \cap R \cap A \setminus \{p\} = \emptyset$.
+
+Then, $p\in R', p\in R$, hence $R' \cap R$ is a region containing $p$, and let this be $S$, i.e., $p \in S$.
+
+Then, $S \cap A \setminus \{p\} = \emptyset$, hence $p \notin LP(A)$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+\begin{exercise}  Find realizations of a continuum $(C, <)$.  That is, find concrete sets $C$ endowed with a relation $<$ satisfying all of the axioms (so far).  Are they the same?  What does ``the same'' mean here?
+\begin{proof}
+$\bbQ, \bbZ$ are realizations of a continuum. 
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{exercise}
+\bigskip
+
+\begin{center}
+{\em Additional Exercises}
+\end{center} 
+
+{\em In all exercises you are expected to prove your answer, unless explicitly stated otherwise.}
+
+\begin{enumerate}
+
+\item Show that for all $p,q\in \bbQ$ such that $p<_{\bbQ}q,$ there is some $r\in \bbQ$ with $p<_{\bbQ} r <_{\bbQ}q.$
+
+\begin{proof}
+Let $r = \frac{p+q}{2}$. Then, $p<q$, hence $2p<p+q$, hence $\frac{2p}{2} < \frac{p+q}{2}$, hence $p < r$.
+
+Next, $p<q$, hence $p+q<2q$, hence $\frac{p+q}{2} < \frac{2q}{2}$, hence $r < q$.
+
+Therefore, $p<r<q$. This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+\item By identifying $n\in \bbZ$ with $[\frac{n}{1}]\in \bbQ$ we can think of $\bbZ$ as a subset of $\bbQ.$ 
+We shall write $n$ to mean $[\frac{n}{1}].$ Show that for all $p\in \bbQ,$ there is some 
+$n\in \bbZ$ such that $p<_{\bbQ} n.$
+
+\begin{proof}
+Let $p = [\frac{a}{b}]$ for $a \in \bbZ, b \in \bbN$. 
+
+Case 1: If $a=0$, let $n = 1$. Then, $p = [\frac{0}{1}]<1 = n$.
+
+Case 2: If $a>0$, let $n = a$. Then, $p = [\frac{a}{b}]<a = n$.
+
+Case 3: If $a<0$, let $n = 0$. Then, $p= [\frac{a}{b}]<0 = n$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+
+\item
+
+
+\begin{definition}
+	Given two sets $A$ and $B$, we say that $A\subsetneq B$ if $A\subset B$ and $A\neq B$.
+\end{definition}
+
+For each set $X$ and subset $<_X \subset X\times X$, determine if $<_X$ is an ordering:
+\begin{enumerate}
+\item Let $X = \wp(\bbN)$ and $<_X = \{(A,B) \in \wp(\bbN)\times\wp(\bbN) | A \subset B\}$.
+\item Let $X = \big\{ \{x \in \bbN | x \leq n\} \in \wp(\bbN) | n \in \bbN \big\}$ and $<_X = \{ (A, B)\in X\times X | A \subsetneq B\}$.
+\item Let $X = \{ f \subset \bbN \times \bbN | f \text{ is a function}\}$ and $<_X = \{ (f,g) \in X\times X | f(n) < g(n) \text{ for all }n\in\bbN\}$.
+\item Let $X = \{ f \subset \bbN \times \bbN | f \text{ is a function}\}$ and $<_X = \{ (f,g) \in X\times X | f(n) \leq g(n) \text{ for all }n\in\bbN \text{ and there exists } n\in\bbN \text{ such that } f(n) < g(n)\}$.
+\end{enumerate}
+(For the purposes of this exercise, ``$<$'' means the usual ordering on $\bbN$, i.e. if $m,n\in\bbN$ then $m < n$ if and only if $n = m+k$ for some $k\in\bbN$.)
+
+\item
+	Which of the following pairs of a set and an ordering satisfy Axioms 1,2, and 3 (and are thus examples of a ``continuum'')?
+	\begin{enumerate}
+		\item[i)] $C_1 = \{[n] \in \mathcal{P}(\bbN) \mid n \in \bbN\cup\{0\}\}$, where, for $[n], [m] \in C_1$, we say $[n] <_{C_1} [m]$ if $[n] \subsetneq [m]$;
+		\item[ii)] $C_2 = \bbZ$, where $<_\bbZ$ is the usual ordering on $\bbZ$;
+		\item[iii)] $C_3 = \bbZ\times \bbN$, where, for $(a,b), (x,y) \in \bbZ\times\bbN$ we say that $(a,b) <_3 (x,y)$ if $a < x$ or if $a=x$ and $b < y$.
+	\end{enumerate}
+
+
+\item
+		Find, without proof, the exterior of each region.
+		\begin{enumerate}
+			\item Let $C_2$ and $<_\bbZ$ be as in Exercise 5.  Let $R = \underline{38}$.
+			\item Let $C_3$ and $<_3$ be as in Exercise 5.  Let $R = \underline{(-2,5)(-2,10)}$.
+			\item Let $C_3$ and $<_3$ be as in Exercise 5.  Let $R = \underline{(-2,5)(1,10)}$.
+		\end{enumerate}
+
+
+
+\item
+		Find the limit points of each region.
+		\begin{enumerate}
+			\item Let $C_2$ and $<_\bbZ$ be as in Exercise 5.  Let $R = \underline{38}$.
+			\item Let $C_3$ and $<_3$ be as in Exercise 5.  Let $R = \underline{(-2,5)(-2,10)}$.
+			\item Let $C_3$ and $<_3$ be as in Exercise 5.  Let $R = \underline{(-2,5)(1,10)}$.
+		\end{enumerate}
+
+
+ 
+
+\item Let $A$ and $B$ be realizations of the continuum, with orderings $<_A, <_B,$ respectively. We say that $A$ and $B$ are {\em isomorphic} if there is a bijection $f:A\longrightarrow B$ such that 
+$$a_1<_A a_2\Longrightarrow f(a_1)<_B f(a_2).$$
+Show that $\bbZ$ and $\bbQ$ (with the orderings given in Scripts 1 and 2) are realizations of the continuum that are {\em not} isomorphic.
+
+\begin{proof}
+Suppose $f:\bbQ \rightarrow \bbZ$ such that $a_1<_\bbQ a_2\Longrightarrow f(a_1)<_\bbZ f(a_2)$ and $f$ is bijective. 
+
+Let $a_1 = [\frac{0}{1}]$ and $a_2 = [\frac{1}{1}]$. Then, we know by the ordering $<_\bbQ$ that $a_1 <_\bbQ a_2$.
+
+Let $f(a_1)=z_1$ and $f(a_2)=z_2$, then we know by our original assumption that $z_1 <_\bbZ z_2$. 
+
+Then, for all $q$ such that $q \in \_{01}$, we have that $f(q) \in \_{z_1z_2}$. However, there are finitely many points $z \in \bbZ$ in the region $\_{z_1z_2}$, but infinitely many points $q \in \bbQ$ in the region $\_{01}$, hence by the pigeonhole principle $f$ cannot be injective, hence it cannot be bijective. This is a contradiction.
+
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+
+\item
+Suppose that $R_1, R_2, \dots$ are regions in a continuum $C$ and that $x \in LP(\displaystyle \bigcup_{i=1}^\infty R_i)$.  Is it true that there exists $i \in \bbN$ such that $x \in LP(R_i)$?  Does this answer change if we add the additional hypothesis that there exists $k\in \bbN$ such that $x \in R_k$?
+
+\item Show that any continuum $C$ satisfying Axioms 1-3 is infinite and write $C$ as a union of regions in $C.$
+\begin{proof}
+Assume continuum $C$ is finite. By Axiom 1, $C \not= \emptyset$. By Axiom 2 for the ordering and Theorem 3.5, $C$ can be written as $a_1 < a_2 < \dots < a_n$, where $n = |C|$. Then, $a_1$ is the first point of $C$ and $a_n$ is the last point of $C$, and this violates Axiom 3, which says that $C$ has no first or last point. Hence, $C$ is infinite.
+
+By Theorem 3.11, if $p \in C$, then there exists a region $R_p$ such that $p \in R_p$. Then, we know by Axiom of Choice that we can select points $p$ in a continuum $C$, hence $C = \bigcup_{p \in C} R_p$. 
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+\item  Prove that if $A\subset\bbZ,$ $A $ has no limit points.
+\begin{proof}
+We know that if $A \subset \bbZ$, then $LP(A) \subset LP(\bbZ)$, hence it suffices to show that $LP(\bbZ) = \emptyset$.
+
+Assume $LP(\bbZ) \not= \emptyset$, then let $p \in LP(\bbZ)$. We want to show that there exists some region $R$ such that $p \in R, R\cap \bbZ \setminus \{p\} = \emptyset$.
+
+Let $R = \_{(p-1)(p+1)}$. Then, we know that $p-1 <p<p+1$, hence $p \in R$.
+
+If $p$ is a limit point of $\bbZ$, then by Theorem 3.25, $R \cap \bbZ$ is infinite, and this is a contradiction.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item Let $i^2=-1$ and define $\bbZ [i]=\{a+bi\mid a,b\in\bbZ\}.$ Define an ordering on $\bbZ[i]$ by $a+bi<c+di$ if, and only if,
+either $a<c,$ or $a=c$ and $b<d.$
+\begin{enumerate}
+\item Prove that $<$ is indeed an ordering. (So you must verify the properties in Definition 3.1. Note that you may assume the usual properties of $\bbZ$ - see Script 0 for full details.)
+\item Prove that, with this ordering, $\bbZ[i]$ satisfies Axioms 1,2 and 3, so is a realization of the continuum as defined so far. 
+
+
+
+\end{enumerate}
+
+
+*****Food For Thought*****
+
+1 - Suppose $C_1, C_2, \ldots$ are continua, where $<_i$ is the order of $C_i$. Prove that the following are continua:
+
+a - $C_1\times C_2$ equipped with lexicographic order $<_L$, that is,
+
+$(x,y) <_L (u,v)$ if $x <_1 u$ or ($x = u$ and $y <_2 v$).
+
+\begin{proof}
+Since $C_1 \not= \emptyset, C_2 \not= \emptyset$, we know that $C_1 \times C_2 \not= \emptyset$. This satisfies Axiom 1.
+
+transitive
+trichotomy
+
+Let $(p,q) \in C_1 \times C_2$. Since $C_1$ has no first point, there exists $p' \in C_1$ such that $p'<p$. Then, $(p',q) <_L (p,q)$. Since $(p,q) \in C_1$ is arbitrary, $C_1 \times C_2$ has no first point.
+
+Let $(p,q) \in C_1 \times C_2$. Since $C_2$ has no last point, there exists $q' \in C_2$ such that $q<q'$. Then, $(p,q) <_L (p,q')$. Since $(p,q) \in C_1$ is arbitrary, $C_1 \times C_2$ has no last point. This satisfies Axiom 3.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+b - $\prod_{i=1}^n C_i$ (i.e., $C_1\times\cdots\times C_n$) equipped with lexicographic order $<_L$, that is,
+
+$(x_1,\ldots,x_n) <_L (y_1,\ldots, y_n)$ if there exists $i\in[n]$ such that $x_j = y_j$ for every $j\in[i-1]$ and $x_i <_i y_i$.
+
+\begin{proof}
+strong induction on n
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+c - $\prod_{i\in\mathbb{N}} C_i$ (i.e., the set of infinite sequences $(x_i)_{i\in\mathbb{N}}$ such that $x_i\in C_i$ for every $i\in\mathbb{N}$) equipped with lexicographic order $<_L$, that is,
+
+$(x_i)_{i\in\mathbb{N}} <_L (y_i)_{i\in\mathbb{N}}$ if there exists $i\in\mathbb{N}$ such that $x_j = y_j$ for every $j\in[i-1]$ and $x_i <_i y_i$.
+
+2 - Using the constructions above of continua (along with the fact that $\mathbb{Z}$ and $\mathbb{Q}$ are continua), decide how many "different" continua you can get considering $C_1\times\cdots\times C_n$ where each $C_i$ is either $\mathbb{Z}$ or $\mathbb{Q}$.  What about if you also consider $\prod_{i\in\mathbb{N}} C_i$ where each $C_i$ is either $\mathbb{Z}$ or $\mathbb{Q}$?
+
+
+
+\end{enumerate}
+
+
+\end{document}

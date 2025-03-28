@@ -1,0 +1,772 @@
+\documentclass[11pt]{article}
+
+\usepackage{color}
+%\input{rgb}
+%----------Packages----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage[all]{xy}
+\usepackage[mathcal]{eucal}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage{fullpage}  %%smaller margins
+%----------Commands----------
+
+%%penalizes orphans
+\clubpenalty=9999
+\widowpenalty=9999
+
+
+
+
+
+%% bold math capitals
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+%% blackboard bold math capitals
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% script math capitals
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\emptyset}{\O}
+
+\providecommand{\abs}[1]{\lvert #1 \rvert}
+\providecommand{\norm}[1]{\lVert #1 \rVert}
+
+
+\providecommand{\ar}{\rightarrow}
+\providecommand{\arr}{\longrightarrow}
+
+\renewcommand{\_}[1]{\underline{ #1 }}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{exercise*}{Exercise 3.26}
+
+\DeclareMathOperator{\ext}{ext}
+
+
+\newcommand{\head}[1]{
+	\begin{center}
+		{\large #1}
+		\vspace{.2 in}
+	\end{center}
+	
+	\bigskip 
+}
+%----------Theorems----------
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\newtheorem{axiom}{Axiom}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{nondefinition}[theorem]{Non-Definition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{warning}[theorem]{Warning}
+
+
+\numberwithin{equation}{subsection}
+
+\newcommand{\hide}[1]{{\color{red} #1}} % for instructor version
+\newcommand{\com}[1]{{\color{blue} #1}} % for instructor version
+%----------Title-------------
+
+
+\begin{document}
+
+\head
+{ MATH 161, Autumn 2024\\ SCRIPT 4: The Topology of a Continuum} 
+
+
+
+
+
+%%---  sheet number for theorem counter
+\setcounter{section}{4}   
+
+
+In this sheet we give a continuum $C$ a topology.  Roughly speaking, this is a way to describe how the points of $C$ are `glued together'.  
+
+\medskip
+
+
+
+
+\begin{definition}
+A subset of a continuum is \emph{closed} if it contains all of its limit points.
+\end{definition}
+
+\begin{theorem}  The sets $\emptyset$ and $C$ are closed.
+\begin{proof}
+$LP(\emptyset)=\emptyset \subset \emptyset$, hence $\emptyset$ contains all of its limit points, hence it is closed.
+
+$LP(C) = \{p \in C \mid \forall R: R\cap C\setminus\{p\} \not = \emptyset\} \subset C$, hence $C$ contains all of its limit points, hence it is closed.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{theorem}
+
+\begin{theorem}  A subset of $C$ containing a finite number of points is closed.
+\begin{proof}
+Let $A$ be a subset of $C$ containing a finite number of points. Then, we know that $LP(A) = \emptyset$, hence $\emptyset \subset A$, hence $A$ is closed.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+\begin{definition}
+Let $X$ be a subset of $C$.  The \emph{closure} of $X$ is the subset $\overline{X}$ of $C$ defined by:
+\[
+\overline{X} = X \cup LP(X).
+\]
+\end{definition}
+
+\begin{theorem}  $X \subset C$ is closed if and only if $X = \overline{X}$.
+\begin{proof}
+First, we want to show that if $X = \overline{X}$, then $X$ is closed. We have that $X = X \cup LP(X)$, hence for all $p \in LP(X), p\in X$, hence $LP(X) \subset X$, hence $X$ is closed.
+
+Next, we want to show that if $X$ is closed, then $X = \overline{X}$. We have that $LP(X) \subset X$, hence $\overline{X} = X \cup LP(X) = X$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+\begin{theorem}  Let $X \subset C.$ Then $\overline{X}$ is closed. (Equivalently, $\overline{X} = \overline{\overline{X}}$.)
+\begin{proof}
+
+It suffices to show that $X = \overline{X}.$ 
+
+First, we want to show that $\overline{X} \subset \overline{\overline{X}}$. We know that $\overline{X} \subset \overline{X} \cup LP(\overline{X})$. This completes the first containment.
+
+Next, we want to show that $\overline{\overline{X}} \subset \overline{X}$. Hence, we want to show that $\overline{X} \cup LP(\overline{X}) \subset \overline{X}$, i.e., $\overline{X} \cup LP(X \cup LP(X)) \subset \overline{X}$, i.e., $\overline{X} \cup LP(X) \cup LP(LP(X)) \subset \overline{X}$. Hence, it suffices to show that $LP(LP(X) \subset LP(X)$.
+
+Let $x \in LP(LP(X))$, then we want to show that $x \in LP(X)$. Let $R$ be a region such that $x \in R$, then we want to show that $R \cap X \setminus \{x\} = \emptyset$. 
+
+Since $x \in LP(LP(X))$, we know that $R \cap LP(X) \setminus \{x\} \not = \emptyset$. Then let $y \in R \cap LP(X) \setminus \{x\}$, i.e., $y \not = x, y \in R, y \in LP(X)$.
+
+Then, there exist infinitely many $z_i \not = y$ such that $z_i \in X\cap R$, hence there is some $\tilde{z} \not = x$ such that $\tilde{z} \in R \cap X$. Hence, $R \cap X \setminus\{x\} \not= \emptyset$. Hence, $x \in LP(X)$.
+
+This completes the proof.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+
+
+
+\begin{definition}  A subset $G$ of a continuum $C$ is \emph{open} if its complement $C \setminus G$ is closed.
+\end{definition}
+
+\begin{theorem}\label{fortop1}  The sets $\emptyset$ and $C$ are open.
+\begin{proof}
+$C \setminus \emptyset = C$, and we know from Theorem 4.2 that $C$ is closed, hence $\emptyset$ is open.
+
+$C \setminus C = \emptyset$, and we know from Theorem 4.2 that $\emptyset$ is closed, hence $C$ is open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+The following is a very useful criterion to determine whether a set of points is open.
+
+\begin{theorem}\label{thm:openchar}  Let $G \subset C$.  Then $G$ is open if and only if for all $x \in G$, there exists a region $R$ such that $x \in R \subset G$.
+\begin{proof}
+First, we want to show that if $G$ is open, then for all $x \in G$, there exists a region $R$ such that $x \in R \subset G$. Let $x \in G$, then we want to construct a region $R$ such that $x \in R \subset G$.
+
+We know that $G$ is open, hence $C \setminus G$ is closed. Hence $x \notin LP(C \setminus G)$. Hence, there exists a region $R$ such that $x \in R$ and $R \cap (C \setminus G) \setminus \{x\} = \emptyset$. 
+
+We know that $x \in G$, hence $x \notin C \setminus G$, hence $(C \setminus G) \setminus x = C \setminus G$. Therefore, we know that there exists a region $R$ such that $x \in R$ and $R \cap C \setminus G = \emptyset$. 
+
+Hence, for all $r \in R, r \notin C \setminus G, r \in G$. Therefore, $R \subset G$.
+
+Next, we want to show that if there exists a region $R$ such that $x \in R \subset G$ for all $x \in G$, then $G$ is open. We want to show that $LP(C \setminus G) \subset (C \setminus G)$. Hence, it suffices to show that for all $x \in G, x \notin LP(C \setminus G)$.
+
+Suppose there is some $g \in G$ such that $g \in LP(C \setminus G)$. This implies that for all regions $R$ such that $g \in R$, $R \cap (C \setminus G) \setminus \{g\} \not = \emptyset$.
+
+We know that there exists a region $R_g$ such that $g \in R_g \subset G$. Hence, $R_g \cap (C \setminus G) = \emptyset$. Then, we have constructed a region, namely $R_g$, such that $g \in R_g$ and $R_g \cap (C \setminus G) \setminus \{g\} = \emptyset$. This is a contradiction.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+\begin{corollary}  Every region $R$ is open.  Every complement of a region, $C \setminus R,$ is closed.
+\begin{proof}[Proof by Contradiction]
+We want to show that $LP(C \setminus R) \subset C \setminus R$, i.e., we want to show that $\forall p \in LP(C \setminus R): p \in C \setminus R$. 
+
+Suppose, for sake of contradiction, that there is some $x \in LP(C \setminus R)$ such that $x \not \in C \setminus R$. Since $x \in C, x \notin C \setminus R$, hence $x \in R$. Also, since $x \notin C \setminus R$, hence $C \setminus R \setminus \{x\} = C \setminus R$.
+
+Then, $R$ is a region such that $x \in R$ and $R \cap (C \setminus R) \setminus \{x\} = R \cap (C \setminus R) = \emptyset$. This means $x \notin LP(C \setminus R)$, and this is a contradiction.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\begin{proof}[Proof by Theorem 4.9]
+We want to show that for all $x \in R$, there exists a region $R'$ such that $x \in R' \subseteq R$. We let $R' = R$ and this completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{corollary}
+
+
+\begin{corollary} Let $G\subset C.$ Then $G$ is open if and only if for all $x\in G,$ there exists a subset $V\subset G$ such that $x\in V$ and $V$ is open. 
+\begin{proof}
+In the forward direction, we want to show that if $G$ is open, then for all $x \in G$ there exists $V \subset G$ such that $x \in V$ and $V$ is open. We know that there exists a region $R \subset G$ such that $x \in R$. Every region is open, hence let $V = R$ and this completes the forward direction.
+
+In the backward direction, let $x \in G$, then by assumption we know that there exists $V \subset G$ such that $V$ is open and $x \in V$. Then, by Theorem 4.9, $\exists \text{ region }R$ such that $x \in R \subset V \subset G$, hence $G$ is open. This completes the backward direction.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary} 
+
+
+\begin{corollary}\label{cor:halfspace}  Let $a \in C$.  Then the sets $\{ x \in C \mid x < a\}$ and $\{x\in C \mid a < x \}$ are open.
+\begin{proof}
+Let $A = \{ x \in C \mid x < a\}$ and let $x \in A$. Since $C$ has no first point, let $y \in A$ such that $y<x<a$. Then, $x \in \_{ya} \subset A$. Hence, $A$ is open by Theorem 4.9.
+
+Let $B = \{ x \in C \mid a < x\}$ and let $x \in B$. Since $C$ has no last point, let $y \in A$ such that $a<x<y$. Then, $x \in \_{ay} \subset B$. Hence, $B$ is open by Theorem 4.9.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{theorem}\label{union}  Let $G$ be a nonempty open set.  Then $G$ is the union of a collection of regions. 
+\begin{proof}
+By Theorem 4.9, if $G$ is open, then for all $x \in G$, there exists a region $R_x$ such that $x \in R_x \subset G$. 
+
+Then, $G = \bigcup_{x \in G}x \subset \bigcup_{x \in G}R_x = G$.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+
+
+
+\begin{exercise}  Do there exist subsets $X \subset C$ that are neither open nor closed?
+\begin{proof}
+Yes. Let $M = \{x \in \bbQ \mid x >0 \text{ and } x \leq 1\}$. 
+
+Then, $0 \in LP(M), 0 \notin M$, hence $M$ is not closed.
+
+$1 \in LP(C \setminus M), 1 \notin C \setminus M$, hence $C \setminus M$ is not closed, hence $M$ is not open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise}
+
+
+
+\begin{theorem}  Let $\{X_{\lambda} \}$ be an arbitrary nonempty collection of closed subsets of a continuum $C.$  Then the intersection $\bigcap_{\lambda} X_{\lambda} $ is closed.
+\begin{proof}
+We prove this using Corollary 4.16 (for which a standalone proof is provided). 
+
+Let $G_\lambda = C \setminus X_\lambda$, where $\forall \lambda: G_\lambda$ is open. Then, $\bigcup_{\lambda} G_{\lambda} = \bigcup_{\lambda} (C \setminus X_{\lambda}) = C \setminus (\bigcap_{\lambda} X_{\lambda})$ is open.
+
+Hence, $\bigcap_{\lambda} X_{\lambda}$ is closed.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+
+\begin{corollary}  Let $\{G_{\lambda} \}$ be an arbitrary nonempty collection of open subsets of a continuum $C$.  Then the union $\bigcup_{\lambda} G_{\lambda}$ is open.  
+\begin{proof}
+
+Let $x \in \bigcup_{\lambda} G_{\lambda}$, then $\exists \lambda_0$ such that $x \in G_{\lambda_0}$. Since by definition $G_{\lambda_0}$ is open, there exists a region $R$ such that $x \in R, R \subset G_{\lambda_0}$, hence $R \in \bigcup_{\lambda} G_{\lambda}$. 
+
+Therefore, $\bigcup_{\lambda} G_{\lambda}$ is open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{theorem} \label{*} Let $\{G_1, \dotsc, G_n\}$ be a finite nonempty collection of open subsets of a continuum $C.$  Then the intersection $G_1 \cap \dotsm \cap G_n$ is open.
+\begin{proof}
+We prove this using Corollary 4.18 (for which a standalone proof is provided).
+
+We know that for all $i \in [n], G_i$ is open, hence $C \setminus G_i$ is closed.
+
+Then, $C \setminus (G_1 \cap \dotsm \cap G_n) = (C \setminus G_1) \cup \dotsm (C \setminus G_n)$, which we know is a finite union of closed sets, so it is closed.
+
+Since $C \setminus (G_1 \cap \dotsm \cap G_n)$ is closed, $G_1 \cap \dotsm \cap G_n$ is open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem}
+
+
+
+\begin{corollary}\label{fortop2}    Let $\{X_1, \dotsc, X_n\}$ be a finite nonempty collection of closed subsets of a continuum $C$.  Then the union $X_1 \cup \dotsm \cup X_n$ is closed.
+\begin{proof}
+We know that limit points are commutative over finite unions. Hence, 
+\[
+LP(\bigcup_{i=1}^n{X_i}) = \bigcup_{i=1}^n{LP(X_i)} \subset \bigcup_{i=1}^n{X_i}.
+\]
+
+Therefore, $LP(\bigcup_{i=1}^n{X_i}) \subset \bigcup_{i=1}^n{X_i}$, hence $\bigcup_{i=1}^n{X_i}$ is closed.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+
+\begin{exercise}  Is it necessarily the case that the intersection of an infinite number of open sets is open? Is it possible to construct an infinite collection of open sets whose intersection is not open?  Equivalently, is it possible to construct an infinite collection of closed sets whose union is not closed?
+\begin{proof}[Proof for Intersections]
+$C \setminus \left[\bigcap_{n \in \bbN} \_{(-\frac{1}{n})(\frac{1}{n})}\right]$ is not closed, since $0$ is a limit point that is not contained in the set.
+
+Therefore, $\left[\bigcap_{n \in \bbN} \_{(-\frac{1}{n})(\frac{1}{n})}\right]$ is not open, even though $\_{(-\frac{1}{n})(\frac{1}{n})}$ is a region (i.e., it is open).
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\begin{proof}[Proof for Unions]
+$\bigcup_{n \in \bbN} \left[C \setminus \_{(-\frac{1}{n})(\frac{1}{n})}\right]$ is not closed, even though $C \setminus \_{(-\frac{1}{n})(\frac{1}{n})}$ is closed for all $n \in \bbN$.
+
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{exercise} 
+
+Theorem \ref{union} says that every nonempty open set is the union of a collection of regions.  This necessary condition for open sets is also sufficient:
+
+
+ \begin{corollary}  Let $G \subset C$ be nonempty.  Then $G$ is open if and only if $G$ is the union of a collection of regions.
+ \begin{proof}
+For the forward direction, we know by Theorem 4.13 that if $G$ is a nonempty open subset of $C$, then $G$ is the union of a collection of regions.
+
+For the backward direction, we want to show that if $G$ is the union of a collection of regions, then $G$ is open.
+
+We know that every region is open, and the union of open sets is open, hence $G$ is open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary}
+
+\begin{corollary} If $\underline{ab}$ is a region in $C,$ then $\ext{\_{ab}}$ is open.
+\begin{proof}
+$\ext{\_{ab}} = \{ x \in C \mid x < a\} \cup \{x\in C \mid a < x \}$.
+
+We know by Corollary 4.12 that $\{ x \in C \mid x < a\}$ and $\{x\in C \mid a < x \}$ are open, and a union of open sets is open.
+
+Hence, $\ext{\_{ab}}$ is open.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{corollary} 
+
+
+
+\begin{definition}
+Let $C$ be a continuum.  We say that $C$ is {\it disconnected} if it may be written as $C=A\cup B,$ where $A$ and $B$ are disjoint, non-empty open sets.  $C$ is {\it connected} if it is not disconnected.
+
+
+\end{definition} 
+
+\begin{theorem}\label{thm:nonemptyregions} Let $C$ be a connected continuum. Let $x, y \in C$,  with $x < y$. Then there exists $z \in C$ such that $x<z<y.$  In particular, all regions of a connected continuum are nonempty.
+\begin{proof}
+Assume there does not exist $z \in C$ such that $x<z<y$. Let $A = \{m \in C \mid m <y\}$ and let $B = \{m \in C \mid m >x\}$.
+
+Then, we want to show that $C = A \cup B$, where $A$ and $B$ are disjoint, nonempty and open.
+
+We know that $A \subset C, B \subset C$, hence $A \cup B \subset C$. Suppose $C \not \subset A \cup B$, i.e., $\exists p \in C$ such that $p \notin A \cup B$. Since $p \notin A, p \geq y$. Since $p \notin B, p \leq x$. Thus, $y \leq p \leq x$, and this contradicts the assumption that $x < y$.
+
+By Corollary 4.12, $A$ and $B$ are open.
+
+Suppose $A \cap B \neq \emptyset$. Then, $\exists q \in C$ such that $q \in A, q \in B$, i.e., $q<y, q>x$, however this contradicts our original assumption. Hence $A$ and $B$ are disjoint.
+
+$x \in A, y \in B$, hence $A$ and $B$ are nonempty.
+
+Hence, if there does not exist $z \in C$ such that $x<z<y$, then $C$ must be disconnected.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{theorem} 
+
+\begin{exercise} Let $C$ be a connected continuum and $a\in C.$ Prove that $C\setminus\{a\}$ is a disconnected continuum.
+\begin{proof}
+
+$C\setminus\{a\}$ is a continuum, since it is nonempty, has the same ordering as $C$, and has no first or last point.
+
+Let $A = \{x \in C \mid x<a\}$ and $B=\{x \in C \mid x>a\}$.
+
+By trichotomy of the ordering, $C\setminus\{a\} = A \cup B$, and $A, B$ are disjoint.
+
+We know that $A$ is open in $C$. Let $x 
+\in A$, then there exists a region $R = \_{pq}$ such that $x \in R \subset C$. If $q \neq a$, then we are done.
+
+If $q = a$, then we know that there exists a point $s$ such that $q<s<a$. Hence, $\_{ps}$ is a region in $C \setminus \{a\}$ that contains $x$. Hence, $A$ is open in $C \setminus A$.
+
+By analogous reasoning for $B$, the proof is completed.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise} 
+
+
+
+
+\begin{exercise} Must every realization of a continuum be disconnected?
+Think about the realizations of the continuum from Exercise 3.26. Are they connected/disconnected? 
+\begin{proof}
+$\bbZ$ and $\bbQ$ are disconnected. $\bbR$ is connected.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{exercise} 
+\bigskip
+
+\begin{center}
+{\em Additional Exercises}
+\end{center}
+
+\begin{enumerate}
+
+\item Prove that if $S\subset C$ then
+
+$$ \overline{S}=\{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\}.$$
+
+{\bf This is the best way to think of closure - in general, splitting into $S$ and its limit points is a very inefficient
+approach.}
+
+\begin{proof}
+By definition, $\overline{S} = S \cup LP(S)$. Hence, we want to show that $S \cup LP(S) = \{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\}$.
+
+For the first containment, suppose $x \in S \cup LP(S)$.
+
+Case 1: $x \in S$. Then, we know that for every region $R$ containing $x$, $x \in R \cap S$, hence $R \cap S \not = \emptyset$. Hence, $[S \cup LP(S)] \subset \{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\}$.
+
+Case 2: $x \notin S$. Then, since $x \in S \cup LP(S)$, we know that $x \in LP(S)$. Hence, for every region $R$ containing $x$, $R \cap S \setminus \{x\} \not= \emptyset$. Since $x \notin S$, we know that $S \setminus \{x\} = S$, hence $R \cap S \not = \emptyset$. Hence, $[S \cup LP(S)] \subset \{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\}$.
+
+For the second containment, suppose $x \in C$ such that for all regions $R \text{ containing } x, R\cap S\neq \emptyset$.
+
+Case 1: $x \in S$. Then, $x \in S \cup LP(S)$, hence $\{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\} \subset [S \cup LP(S)]$.
+
+Case 2: $x \notin S$, i.e., $x \in C \setminus S$. Then, $S = S \setminus \{x\}$, and since for every region $R$ that contains $x, R \cap S \neq \emptyset$, hence for every region $R$ that contains $x, R \cap S \setminus \{x\} \neq \emptyset$. Hence, $x \in LP(S)$, hence $\{x\in C\mid \text{ for all }  R \text{ containing } x, R\cap S\neq \emptyset\} \subset [S \cup LP(S)]$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item Find an example of a continuum $C$ and a subset that is both open and closed, other than $\emptyset $ and $C.$
+
+
+\item Prove that if $X\subset Y$ then $\overline{X}\subset \overline{Y}.$ If $\overline{X}=\overline{Y},$ is it necessarily true that $X=Y$?
+
+\begin{proof}
+We want to show that if $A \subset B$, then $\overline{A} \subset \overline{B}$. 
+
+Let $a \in \overline{A}$, then for every region $R$ that contains $a$, we have that $R \cap A \neq \emptyset$. Since $A \subset B$, then for any particular $R$, we have that $(R \cap A) \subset (R \cap B)$.
+
+Hence, we know that for every region $R$ that contains $a$, $R \cap B \neq \emptyset$. Hence, $a \in \overline{B}$. Thus, $\overline{A} \subset \overline{B}$.
+
+
+It is not necessarily true that if $\overline{X}=\overline{Y},$ then $X = Y$. We present a counterexample.
+
+Let $X = \_{ab}$ and $Y = C \setminus \{\ext(\_{ab})\}$. Then, $\overline{X}=\overline{Y} = \_{ab} \cup \{a\} \cup \{b\}$, but $X \neq Y$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item Suppose $A,B\subset C.$  Prove
+that 
+\[ \overline{A\cap B}\subset\overline{A}\cap\overline{B}.\]  Can one expect
+equality in general?  Why or why not?
+
+\item Prove that the set of limit points of a set $A\subset C$ is a closed set.
+
+\item Let $A\subset C.$ We say that $x\in A$ is an {\it interior} point of $A$ if there is a region $R$ such that $x\in R\subset A.$  We let $int(A)=\{a\in A\mid a\text{ is an interior point of }A\}.$
+\begin{enumerate}
+\item Let $A=\underline{ab},$ for $a,b\in C, a<b.$ Find $int(A).$
+\begin{proof}
+
+$C \setminus \{\ext(\_{ab}) \cup a \cup b\}.$
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item Show that $A$ is open if, and only if, $A=int(A).$
+\begin{proof}
+First, we want to show that if $A = int(A)$, then $A$ is open. A standalone proof that $int(A)$ is open is given in part (c) below, hence if $A = int(A)$, then $A$ is open.
+
+Second, we want to show that if $A$ is open, then $A = int(A)$. If $A$ is open, we know that for all $a \in A$, there exists a region $S_a \subset A$ such that $a \in S_a$. Since $S_a \subset A$, we know that for any $s \in S_a, s \notin \ext(\_{ab}), s\neq a, s\neq b$. Hence, $A = int(A)$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item Show that $int(A)$ is open.
+\begin{proof}
+Since $int(A)= C \setminus \{\ext(\_{ab}) \cup \{a\} \cup \{b\}\}$, it suffices to show that $\{\ext(\_{ab}) \cup \{a\} \cup \{b\}\}$ is closed.
+
+
+Let $p \in LP(\ext(\_{ab}) \cup a \cup b)$, then we want to show that $p \in \{\ext(\_{ab}) \cup a \cup b\}$.
+
+By commutativity of limit points over finite unions, we know that $p \in LP(\ext(\_{ab})) \cup LP(a) \cup LP(b)$. However, $LP(a)=LP(b)= \emptyset$, hence $p \in LP(\ext(\_{ab}))$. 
+
+If $LP(\ext(\_{ab})) = \emptyset$, then $\{\ext(\_{ab}) \cup a \cup b\}$ is closed, and we are done. Else, we know that $\ext(\_{ab})$ is open, hence $p \notin \ext(\_{ab})$. 
+
+Assume $p \in \_{ab}$. Then, there exists a region $R$, namely $R = \_{ab}$ such that $R \cap (\ext(\_{ab}) \cup a \cup b) = \emptyset$. This is a contradiction. Hence, $p \in \{a,b\}$. Therefore, $LP(\ext(\_{ab}) \cup a \cup b) \subset \{a,b\} \subset \{\ext(\_{ab}) \cup a \cup b\}$, hence $\{\ext(\_{ab}) \cup a \cup b\}$ is closed.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\end{enumerate}
+
+
+
+
+\item Let $A,B$ be subsets of $C. $ Either prove or give a counterexample to each of the following:
+\begin{eqnarray*}
+int(A\cap B)& = & int (A)\cap int(B)\\
+int(A\cup B) & = & int (A)\cup int(B).
+\end{eqnarray*}
+\begin{proof}[Proof for Intersections]
+Let $x \in int(A \cap B).$ Then, by definition of interior, there exists a region $R \subset A \cap B$ such that $x \in R$.
+
+Since $A \cap B \subset A$, we know that $R \subset A$, hence there exists a region, namely $R$, such that $x \in R \subset A$. Hence, $x \in int(A)$.
+
+Since $A \cap B \subset B$, we know that $R \subset B$, hence there exists a region, namely $R$, such that $x \in R \subset B$. Hence, $x \in int(B)$.
+
+Thus, $x \in int(A) \cap int(B)$. This completes the first containment, i.e., $int(A\cap B) \subset [int (A)\cap int(B)]$.
+
+Let $y \in int (A)\cap int(B)$. There exist regions $R \subset A$ and $R_0 \subset B$ such that $y \in R, y \in R_0$. Then, $S = R \cap R_0$ is a region such that $y \in S$ and $S \subset A \cap B$. Hence, $y \in int(A \cap B)$.
+
+This completes the second containment, i.e., $[int (A)\cap int(B)] \subset int(A\cap B) $.
+
+This completes the proof.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\begin{proof}[Counter-Example for Unions]
+Let $A, B \subset \bbQ$ such that $A = \_{01} \cup \{1\}$ and $B = \_{12}$. 
+
+Then, $A \cup B = \_{02}$, hence $1 \in int(A \cup B), 1 \notin int(A), 1 \notin int(B)$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\item Let $C$ be a continuum.
+\begin{enumerate}
+\item Show that if $A,B$ are subsets of $C$ such that $A\subset B$ then, if $B$ is closed, $\overline{A}\subset B.$
+\begin{proof}
+$B$ is closed, hence $B = \overline{B}$, hence it suffices to show that if $A \subset B$, then $\overline{A} \subset \overline{B}$. 
+
+Let $a \in \overline{A}$, then for every region $R$ that contains $a$, we have that $R \cap A \neq \emptyset$. Since $A \subset B$, then for any particular $R$, we have that $(R \cap A) \subset (R \cap B)$.
+
+Hence, we know that for every region $R$ that contains $a$, $R \cap B \neq \emptyset$. Hence, $a \in \overline{B}$. Thus, $\overline{A} \subset \overline{B}$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item Show that if $A,B$ are subsets of $C$ such that $A\subset B$ then, if $A $ is open,  $A\subset int(B).$
+\begin{proof}
+If $A$ is open, then for every $a \in A$, there exists a region $R \subset A$ such that $a \in R$. Since $R \subset A$ and $A \subset B$, hence $R \subset B$. 
+
+Then, for every $a \in A$, there exists a region $R \subset B$ such that $a \in R$.
+
+Hence, $A \subset int(B)$.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item Let $A\subset C$ and $\mathcal{F_A}=\{B \subset C\mid B \text{ is a closed set containing } A\}.$ Show that $\overline{A}=\bigcap_{B\in \mathcal{F_A}}   B.$
+\begin{proof}
+For the first containment, let $a \in \overline{A}$ and let $B \subset C$ be such that $A \subset B$ and $B$ is closed.
+
+Case 1: $a \in A$, then $a \in B$, hence $a \in \bigcap_{B\in \mathcal{F_A}}   B$.
+
+Case 2: $a \notin A$, i.e., $a \in LP(A)$. Since $A \subset B$, $LP(A) \subset LP(B)$, hence $a \in LP(B)$. Since $B$ is closed, $LP(B) \subset B$, hence $a \in \bigcap_{B\in \mathcal{F_A}}   B$.
+
+This completes the first containment, i.e., $\overline{A} \subset \bigcap_{B\in \mathcal{F_A}}   B$.
+
+For the second containment, let $b \in \bigcap_{B\in \mathcal{F_A}}   B$. Then, we know that $\overline{A}$ is a closed set containing $A$, hence $A \in \mathcal{F_A}$, hence $b \in \overline{A}$. 
+
+This completes the second containment, i.e., $\bigcap_{B\in \mathcal{F_A}}   B \subset \overline{A}$.
+
+This completes the proof.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+\item Formulate and prove a result analogous to c) for $int (A).$ 
+
+\begin{proof}
+We want to show that $int(A) = \bigcup_{B\in \mathcal{F_A}}   B$, where $\mathcal{F_A}=\{B \subset C\mid B \subset A \text{ and } B \text{ is open}\}$.
+
+$int(A)$ is an open set contained in $A$, hence if $x \in int(A)$, then $x \in \bigcup_{B\in \mathcal{F_A}}   B$. This completes the first containment, i.e., $int(A) \subset \bigcup_{B\in \mathcal{F_A}}   B$.
+
+If $x \in \bigcup_{B\in \mathcal{F_A}}   B$, then there exists at least one $B \in \mathcal{F_A}$ such that $x \in B$. Let this be $B_0$. 
+
+Since $B_0$ is open, it is a union of regions, hence there exists some region $R$ such that $x \in R \subset B_0 \subset A$, hence $x \in int(A)$. This completes the second containment, i.e., $\bigcup_{B\in \mathcal{F_A}}   B \subset int(A)$.
+
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+\end{enumerate}
+
+
+
+\item Prove that 
+\begin{enumerate}
+\item[i)] $\{0\}$ is closed but not open in $\bbQ.$
+\item[ii)] Prove that $\underline{01}$ is open but not closed in $\bbQ.$
+\end{enumerate}
+
+\item Consider the set $X=\{x\in\bbQ\mid x\leq 0\}\cup\{x\in\bbQ\mid 0< x \text{ and } x^2 \leq 2\}.$ Determine whether this set is open/closed/both/neither in $\bbQ.$
+
+\begin{proof}
+We want to show that there does not exist $x\in\mathbb{Q}$ such that $x^2 = 2$. Suppose $x \in \bbQ$ such that $x^2 = 2$.
+
+Then, we can write $x = \frac{p}{q}$, where $p \in \bbZ, q\in \bbN$ such that $q$ is as small as possible, i.e., $\gcd(p,q)=1$. Since $x>1$, we know that $p>q$.
+
+Then, $x^2 = \frac{p^2}{q^2} = 2$. Hence, $p^2 = 2 \cdot q^2$. Since the RHS is even, the LHS must be even. Since $p^2$ must be even, $p$ must be even, hence we can write $p = 2\cdot k$. 
+
+Then, $(2 \cdot k)^2 = 4\cdot k^2 = 2 \cdot q^2$. Hence, $q^2$ must also be even, hence $q$ is also even, but both $p$ and $q$ are even, contradicting the assumption that they were coprime.
+
+First, we want to show that $X$ is open. It suffices to show that for every point $x \in X$, there exists a region contained in $X$ that contains $x$. This is equivalent to finding a point $y\in X$ such that $y > x$. If $x \leq 0$, then $1 \in X, 1>x$. 
+
+If $x >0$, we can write $x = \frac{a}{b}$, with $a,b > 0$ and $\frac{a^2}{b^2} < 2$. This implies that $a^2 \leq 2b^2 - 1$. Then, $a \geq 1$. Suppose $y = \frac{a + \frac{1}{4a}}{b}$. Then, we want to show that $\frac{(a + \frac{1}{4a})^2}{b^2}<2$. This is equivalent to showing that $(a + \frac{1}{4a})^2 < 2b^2$. This is equivalent to showing that $a ^2 < 2b^2 - \frac{1}{2} - \frac{1}{16a^2}$. It suffices to show that $\frac{1}{2} + \frac{1}{16a^2} < 1$. We know that $a \geq 1$, so $\frac{1}{16a^2} \leq \frac{1}{16}$. This proves that $X$ is open, i.e., $\bbQ \setminus X$ is closed.
+
+Similarly, for $\bbQ \setminus X$, we want to show that for every $x \in \bbQ \setminus X$, there exists some $y \in \bbQ \setminus X$ such that $y <x$. Consider $y = \frac{a - \frac{1}{4a}}{b}$. We want to show that $(a - \frac{1}{4a})^2 > 2b^2$. Expanding, we want to show that $a^2 + \frac{1}{16a^2}-\frac{1}{2} > 2b^2$. Analogously to the above, we have that $a^2 + 1 \geq 2b^2$. Hence, we want to show that $a^2 - 2b^2 > \frac{1}{2} - \frac{1}{16a^2}$. We know that $LHS \geq 1$, and it is therefore trivial that $\frac{1}{2} - \frac{1}{16a^2} < 1$. This proves that $\bbQ \setminus X$ is open, i.e., $X$ is closed.
+
+Since $X$ is clopen and $X \neq \emptyset$, $X \neq \bbQ$, this is how we know that $\bbQ$ is disconnected.
+
+\renewcommand\qedsymbol{QED}
+\end{proof}
+
+
+
+\item Let $R=\underline{ab}$ be a region in $C.$  Must it hold that $\overline{R}=\{x\in C\mid a\leq x\leq b\}?$ Either prove or find a counterexample.
+
+\item
+For each part, give an {\em explanation}, but you do not need to give a full proof.
+\begin{enumerate}
+	\item Give an example of a continuum $C$ and a non-empty, closed set $A \subset C$ with no limit points.
+	\item Give an example of a continuum $C$ and a non-empty, closed set $A \subset C$ with exactly one limit point.
+	\item Give an example of a continuum $C$ and a non-empty, closed set $A \subset C$ with a countably infinite set of limit points.
+	\item Give an example of a continuum $C$ and a non-empty, open set $A \subset C$ with no limit points.
+	\item Give an example of a continuum $C$ and a non-empty,  open set $A \subset C$ with exactly one limit point.\footnote{Hint: There are no such examples if $C = \bbQ$ or $\bbZ$ (think about why).  However, one may find an example by looking at a well-chosen subset of $\bbQ$.}
+	\item Give an example of a continuum $C$ and a non-empty,  open set $A \subset C$ with a countably infinite set of limit points.
+\end{enumerate}
+
+
+
+\item Let $X\subset C.$ Then if $A\subset X,$ we use $\overline{A}^X$ to denote the closure of $A$ in $X,$ i.e. $$\overline{A}^X=A\cup\{x\in X\mid x \text{ is a limit point of A}\}=(\overline{A}\cap X).$$ We say that $A$ is {\it closed  in $X$} if $\{x\in X\mid x\text{ is a limit point of A}\}\subset A.$ (Thus $A $ is closed in $X$ if it contains all its limit points in $X.$)
+We say that $A$ is {\it open in $X$} if its complement is closed in $X.$
+
+ 
+
+  We define $X$ to be disconnected if there are non-empty disjoint sets $A,B\subset X$ that are {\it open in $X$} such that $X=A\cup B.$
+  \begin{enumerate}
+  \item
+  Prove that  $X$ is disconnected if, and only if,  there are non-empty subsets $A$ and $B$ such that $X=A\cup B$ and $\overline{A}^X\cap B=\emptyset, \overline{B}^X\cap A=\emptyset.$
+  \item 
+ Prove that $X$ is disconnected if, and only if, there are non-empty disjoint sets $A,B\subset X$ that are {\it closed in $X$} such that $X=A\cup B.$
+ \end{enumerate}
+  
+
+
+\end{enumerate}
+
+
+
+\end{document}
